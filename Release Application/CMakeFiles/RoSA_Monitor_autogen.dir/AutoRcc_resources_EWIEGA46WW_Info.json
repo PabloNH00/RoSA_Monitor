@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen",
+	"CMAKE_BINARY_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor",
+	"CMAKE_SOURCE_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor",
+	"INCLUDE_DIR" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/img/UPM_logo_text.png",
+		"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/img/ETSIDI_logo.png"
+	],
+	"LOCK_FILE" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/RoSA_Monitor_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/RoSA_Monitor_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/resources.qrc",
+	"VERBOSITY" : 0
+}

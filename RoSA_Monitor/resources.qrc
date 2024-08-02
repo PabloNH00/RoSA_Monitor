@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/ETSIDI_logo.png</file>
+        <file>img/UPM_logo_text.png</file>
+    </qresource>
+</RCC>

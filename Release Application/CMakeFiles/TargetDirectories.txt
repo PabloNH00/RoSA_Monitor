@@ -1,0 +1,4 @@
+/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/RoSA_Monitor.dir
+/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/edit_cache.dir
+/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/rebuild_cache.dir
+/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles/RoSA_Monitor_autogen.dir
