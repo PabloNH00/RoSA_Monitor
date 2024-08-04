@@ -54,3 +54,16 @@ Simulation window finished, under review
 
 ### Fixed
 - Problems with checked status in release version
+
+## [Versión 0.1.1] 
+
+### Added
+- Rosa Window for RoSA menu
+- Interaction between main window and rosa window
+- RoSA Firmware button, which launch rqt only for testing  
+
+### Modified
+- Simulation window GUI layout
+
+### Fixed
+- Now you can cancel workspace selection when requested from simulation window, same with rosa window

@@ -93,6 +93,9 @@ void LauncherManager::StopLauncher(LauncherType type){
          case TELEOP:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 run teleop_twist_qt teleop_twist_qt";
              break;
+         case FIRMWARE:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && rqt";
+             break;
          case GAZEBO_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 launch rosa_description rosa_gazebo_launch.py use_sim_time:=true";
              break;

@@ -17,15 +17,21 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
-        Launcher.cpp
+        rosawindow.cpp
         simulationwindow.cpp
         launchermanager.cpp
-        launchermanager.h
-        simulationwindow.h
-        Launcher.h
+        Launcher.cpp       
+
         mainwindow.h
+        rosawindow.h
+        simulationwindow.h
+        launchermanager.h
+        Launcher.h
+
         mainwindow.ui
         simulationwindow.ui
+        rosawindow.ui
+
         resources.qrc
 )
 

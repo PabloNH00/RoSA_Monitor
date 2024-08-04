@@ -11,6 +11,7 @@
 
 
 #include "simulationwindow.h"
+#include "rosawindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -39,6 +40,9 @@ private slots:
     //Called when simulation window is closed
     void onSimulationWindowClosed();
 
+    //Called when RoSA window is closed
+    void onRosaWindowClosed();
+
     void on_RosaButton_clicked();
 
     void on_select_workspace_button_clicked();
@@ -53,6 +57,7 @@ private:
     Ui::MainWindow *ui;
     WindowType activeWindow;
     SimulationWindow* simWindow;
+    RosaWindow* rosaWindow;
     QDir* workspace;
 
 };

@@ -80,6 +80,7 @@ void SimulationWindow::on_GazeboButton_clicked()
     else
     {
         qDebug()<<"Error executing Gazebo  ";
+        ui->GazeboButton->setChecked(false);
 
     }
 }
@@ -135,6 +136,7 @@ void SimulationWindow::on_RvizzButton_clicked()
     else
     {
         qDebug()<<"Error executing Rviz2  ";
+        ui->RvizzButton->setChecked(false);
 
     }
 }
@@ -149,6 +151,7 @@ void SimulationWindow::on_graphButton_clicked()
     else
     {
         qDebug()<<"Error executing rqt_graph  ";
+        ui->graphButton->setChecked(false);
 
     }
 }
@@ -163,6 +166,7 @@ void SimulationWindow::on_rqtButton_clicked()
     else
     {
         qDebug()<<"Error executing rqt  ";
+        ui->rqtButton->setChecked(false);
 
     }
 }
@@ -351,7 +355,8 @@ void SimulationWindow::on_TeleopButton_clicked()
     }
     else
     {
-        qDebug()<<"Error executing rqt  ";
+        qDebug()<<"Error executing teleop  ";
+        ui->TeleopButton->setChecked(false);
 
     }
 }
@@ -369,9 +374,11 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("You have to select a ROS2 workspace first"));
         QString workspace_name = "";
-        while(workspace_name =="")
+
+        workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+        if(workspace_name == "")
         {
-            workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+            return false;
         }
         SetWorkspace(workspace_name);
 

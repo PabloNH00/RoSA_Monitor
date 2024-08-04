@@ -20,6 +20,7 @@ public:
         RQT_GRAPH,
         VIEW_FRAMES,
         TELEOP,
+        FIRMWARE,
         GAZEBO_SIM,
         SLAM_SIM,
         NAVIGATION,

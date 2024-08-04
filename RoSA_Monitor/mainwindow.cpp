@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Prepare simulation window
     simWindow = new SimulationWindow(this);
+    rosaWindow = new RosaWindow(this);
 
 }
 
@@ -32,6 +33,10 @@ MainWindow::~MainWindow()
     if(simWindow != nullptr)
     {
          delete simWindow;
+    }
+    if(rosaWindow != nullptr)
+    {
+         delete rosaWindow;
     }
     delete workspace;
     delete ui;
@@ -59,6 +64,7 @@ void MainWindow::on_EnterSimButton_clicked()
         ui->EnterSimButton->setText("Exit simulation menu");
 
         break;
+
     case SIMULATION_WINDOW:
         //Close simulation window due to second click on button
         simWindow->close();
@@ -74,8 +80,6 @@ void MainWindow::on_EnterSimButton_clicked()
 
             ui->EnterSimButton->setText("Enter simulation menu");
             activeWindow = MAIN_WINDOW;
-
-
         }
         else
         {
@@ -91,7 +95,9 @@ void MainWindow::on_EnterSimButton_clicked()
         //Show alert suggesting to close RoSA menu first
         QMessageBox::information(this, tr("RoSA Info"), tr("You can't enter simulation menu while RoSA is active\nClose RoSA menu first"));
         ui->EnterSimButton->setChecked(false);
+
         break;
+
     default:
         break;
     }
@@ -109,6 +115,79 @@ void MainWindow::onSimulationWindowClosed()
     {
         workspace = new QDir;
         *workspace = *simWindow->getWorkspace();
+        ui->workspace_selected->setText(workspace->dirName());
+    }
+}
+
+
+void MainWindow::on_RosaButton_clicked()
+{
+    //State machine for RoSA mode button pressed
+    switch(activeWindow)
+    {
+    case MAIN_WINDOW:
+        //Run simulation window
+        activeWindow = ROSA_WINDOW;
+
+        connect(rosaWindow, &RosaWindow::windowClosed, this, &MainWindow::onRosaWindowClosed); //Connect windowClosed signal to the method
+
+        //Set the workspace
+        if(workspace != nullptr)
+        {
+            rosaWindow->SetWorkspace(workspace->path());
+        }
+
+        rosaWindow->show();
+        ui->RosaButton->setText("Exit RoSA menu");
+
+        break;
+        break;
+    case SIMULATION_WINDOW:
+        QMessageBox::information(this, tr("RoSA Info"), tr("You can't enter RoSA menu while simulating\nClose simulation menu first"));
+        ui->RosaButton->setChecked(false);
+        break;
+    case ROSA_WINDOW:
+        //Close simulation window due to second click on button
+        rosaWindow->close();
+
+        //if no processes running or user choose to close them
+        if(!rosaWindow->running)
+        {
+            //Prepare another simulation window
+            delete rosaWindow;
+            rosaWindow = new RosaWindow(this);
+
+            ui->RosaButton->setChecked(false);
+
+            ui->RosaButton->setText("Enter simulation menu");
+            activeWindow = MAIN_WINDOW;
+        }
+        else
+        {
+           if(activeWindow == ROSA_WINDOW)
+           {
+                ui->RosaButton->setChecked(true);
+           }
+
+        }
+        break;
+    default:
+        break;
+    }
+}
+
+void MainWindow::onRosaWindowClosed()
+{
+    //Once simulation window is closed set checked to false and update actual window and workspace
+    ui->RosaButton->setChecked(false);
+    ui->RosaButton->setText("Enter simulation menu");
+    activeWindow = MAIN_WINDOW;
+
+    //Save workspace if selected on simulation window
+    if(workspace == nullptr && rosaWindow->getWorkspace() != nullptr)
+    {
+        workspace = new QDir;
+        *workspace = *rosaWindow->getWorkspace();
         ui->workspace_selected->setText(workspace->dirName());
     }
 }
@@ -154,32 +233,16 @@ void MainWindow::on_previousMenuButton_clicked()
         }
         break;
     case ROSA_WINDOW:
+        if(rosaWindow->isHidden())
+        {
+            rosaWindow->show();
+        }
         break;
     default:
         break;
     }
 }
 
-
-void MainWindow::on_RosaButton_clicked()
-{
-    //State machine for RoSA mode button pressed
-    //////////////////TODO
-    switch(activeWindow)
-    {
-    case MAIN_WINDOW:
-        break;
-    case SIMULATION_WINDOW:
-        QMessageBox::information(this, tr("RoSA Info"), tr("You can't enter RoSA menu while simulating\nClose simulation menu first"));
-        ui->RosaButton->setChecked(false);
-        break;
-    case ROSA_WINDOW:
-        break;
-    default:
-        break;
-    }
-    //////////////////TODO
-}
 
 
 void MainWindow::closeEvent(QCloseEvent *event)
