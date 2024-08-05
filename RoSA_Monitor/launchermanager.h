@@ -20,6 +20,7 @@ public:
         RQT_GRAPH,
         VIEW_FRAMES,
         TELEOP,
+        ESP32,
         FIRMWARE,
         URDF,
         LIDAR,

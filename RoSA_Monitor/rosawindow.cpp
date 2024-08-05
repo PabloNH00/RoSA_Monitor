@@ -384,11 +384,25 @@ void RosaWindow::on_TeleopButton_clicked()
 {
     if(ButtonPressed(ui->TeleopButton, LauncherManager::TELEOP, "teleop_twist"))
     {
-        qDebug()<<"Button rqt correctly executed";
+        qDebug()<<"Button teleop correctly executed";
     }
     else
     {
         qDebug()<<"Error executing teleop  ";
+        ui->TeleopButton->setChecked(false);
+
+    }
+}
+
+void RosaWindow::on_esp32Button_clicked()
+{
+    if(ButtonPressed(ui->TeleopButton, LauncherManager::ESP32, "ESP32 monitor"))
+    {
+        qDebug()<<"Button ESP32 correctly executed";
+    }
+    else
+    {
+        qDebug()<<"Error executing esp32";
         ui->TeleopButton->setChecked(false);
 
     }
@@ -522,7 +536,7 @@ bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
 {
     if(!manager.GetLauncher(LauncherManager::FIRMWARE)->GetActive())
     {
-        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start RoSA Firmware\nLaunch Firmware?"));
+        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start RoSA Firmware, URDF and LiDAR\nLaunch RoSA?"));
         if(disclaimer == QMessageBox::No)
         {
             buttonClicked->setChecked(false);
@@ -531,6 +545,8 @@ bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
         else
         {
             on_firmwareButton_clicked();
+            on_URDFButton_clicked();
+            on_lidarButton_clicked();
         }
     }
     return true;

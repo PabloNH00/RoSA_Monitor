@@ -55,6 +55,7 @@ public:
     QPushButton *rqtButton;
     QPushButton *viewFramesButton;
     QPushButton *TeleopButton;
+    QPushButton *esp32Button;
     QFrame *line_3;
     QLabel *label_2;
     QLabel *mapLabel;
@@ -221,6 +222,14 @@ public:
 
         verticalLayout->addWidget(TeleopButton);
 
+        esp32Button = new QPushButton(tabDebugTools);
+        esp32Button->setObjectName(QString::fromUtf8("esp32Button"));
+        sizePolicy1.setHeightForWidth(esp32Button->sizePolicy().hasHeightForWidth());
+        esp32Button->setSizePolicy(sizePolicy1);
+        esp32Button->setCheckable(true);
+
+        verticalLayout->addWidget(esp32Button);
+
 
         verticalLayout_3->addLayout(verticalLayout);
 
@@ -331,6 +340,7 @@ public:
         rqtButton->setText(QCoreApplication::translate("RosaWindow", "Run rqt", nullptr));
         viewFramesButton->setText(QCoreApplication::translate("RosaWindow", "Print transform tree", nullptr));
         TeleopButton->setText(QCoreApplication::translate("RosaWindow", "Run Teleop_Twist", nullptr));
+        esp32Button->setText(QCoreApplication::translate("RosaWindow", "Run ESP32 monitor", nullptr));
         label_2->setText(QCoreApplication::translate("RosaWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Selected map for navigation:</span></p></body></html>", nullptr));
         mapLabel->setText(QCoreApplication::translate("RosaWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">No map selected</span></p></body></html>", nullptr));
         selectMapButton->setText(QCoreApplication::translate("RosaWindow", "Select map", nullptr));

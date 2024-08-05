@@ -93,6 +93,9 @@ void LauncherManager::StopLauncher(LauncherType type){
          case TELEOP:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 run teleop_twist_qt teleop_twist_qt";
              break;
+         case ESP32:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 run rosa_firmware rosa_qt_esp32";
+             break;
          case FIRMWARE:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 run rosa_firmware rosa_driver --ros-args -p device_name:=/dev/ttyUSB0";
              break;

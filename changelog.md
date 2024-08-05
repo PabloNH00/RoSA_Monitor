@@ -97,3 +97,11 @@ During integration test
 ### Fixed
 - Launchers for SLAM and NAVIGATION now different in sim and RoSA due to "use_sim_time" param
 - Rviz tab close when launcher is stoped for a question to user
+
+## [Versión 0.1.6] 
+During integration test
+### Added
+- Button on RoSA debug tools for esp32 monitor
+
+### Fixed
+- Restrictions about llaunchin slam or nav. without FW URDF or LiDAR

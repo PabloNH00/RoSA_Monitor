@@ -57,6 +57,8 @@ private slots:
 
     void on_navigationButton_clicked();
 
+    void on_esp32Button_clicked();
+
 signals:
     //Emitted when window closes
     void windowClosed();
