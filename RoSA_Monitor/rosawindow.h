@@ -35,6 +35,28 @@ private slots:
 
     void on_mainMenuButton_clicked();
 
+    void on_URDFButton_clicked();
+
+    void on_lidarButton_clicked();
+
+    void on_RvizzButton_clicked();
+
+    void on_mainMenuButton_2_clicked();
+
+    void on_graphButton_clicked();
+
+    void on_rqtButton_clicked();
+
+    void on_viewFramesButton_clicked();
+
+    void on_TeleopButton_clicked();
+
+    void on_selectMapButton_clicked();
+
+    void on_SlamButton_clicked();
+
+    void on_navigationButton_clicked();
+
 signals:
     //Emitted when window closes
     void windowClosed();
@@ -52,7 +74,7 @@ protected:
     bool ButtonPressed(QPushButton* button, LauncherManager::LauncherType type, QString name);
 
     //Ask for launch Gazebo if another launcher is selected before and launches it
-    bool FirstLaunchGazebo(QPushButton* buttonClicked);
+    bool FirstLaunchFirmware(QPushButton* buttonClicked);
 
     //Ask if close Rviz bc launcher already open a predefined Rviz
     void QuestionRvizClose(QPushButton* buttonClicked);

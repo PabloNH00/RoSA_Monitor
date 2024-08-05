@@ -153,6 +153,18 @@
 			null
 		],
 		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.h",
+			"MU",
+			"EWIEGA46WW/moc_rosawindow.cpp",
+			null
+		],
+		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_shelloutputwindow.cpp",
+			null
+		],
+		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/simulationwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_simulationwindow.cpp",
@@ -224,6 +236,16 @@
 		[ "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/main.cpp", "MU", null ],
 		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.cpp",
 			"MU",
 			null
 		],

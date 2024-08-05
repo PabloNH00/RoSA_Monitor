@@ -11,14 +11,15 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -29,11 +30,14 @@ class Ui_SimulationWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
+    QTabWidget *tabsimulationWidget;
+    QWidget *tab_IndeximMenu;
+    QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout_3;
     QPushButton *mainMenuButton;
-    QSpacerItem *verticalSpacer;
+    QFrame *line_2;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QPushButton *RvizzButton;
@@ -41,9 +45,11 @@ public:
     QPushButton *rqtButton;
     QPushButton *viewFramesButton;
     QPushButton *TeleopButton;
+    QFrame *line_3;
     QLabel *label_2;
     QLabel *mapLabel;
     QPushButton *selectMapButton;
+    QFrame *line;
     QVBoxLayout *verticalLayout_7;
     QPushButton *GazeboButton;
     QPushButton *SlamButton;
@@ -55,18 +61,25 @@ public:
     {
         if (SimulationWindow->objectName().isEmpty())
             SimulationWindow->setObjectName(QString::fromUtf8("SimulationWindow"));
-        SimulationWindow->resize(899, 489);
+        SimulationWindow->resize(844, 579);
         centralwidget = new QWidget(SimulationWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        tabsimulationWidget = new QTabWidget(centralwidget);
+        tabsimulationWidget->setObjectName(QString::fromUtf8("tabsimulationWidget"));
+        tabsimulationWidget->setEnabled(true);
+        tab_IndeximMenu = new QWidget();
+        tab_IndeximMenu->setObjectName(QString::fromUtf8("tab_IndeximMenu"));
+        gridLayout_2 = new QGridLayout(tab_IndeximMenu);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        mainMenuButton = new QPushButton(centralwidget);
+        mainMenuButton = new QPushButton(tab_IndeximMenu);
         mainMenuButton->setObjectName(QString::fromUtf8("mainMenuButton"));
         QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
@@ -76,13 +89,16 @@ public:
 
         verticalLayout_3->addWidget(mainMenuButton);
 
-        verticalSpacer = new QSpacerItem(20, 25, QSizePolicy::Minimum, QSizePolicy::Maximum);
+        line_2 = new QFrame(tab_IndeximMenu);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout_3->addItem(verticalSpacer);
+        verticalLayout_3->addWidget(line_2);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(centralwidget);
+        label = new QLabel(tab_IndeximMenu);
         label->setObjectName(QString::fromUtf8("label"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Maximum);
         sizePolicy1.setHorizontalStretch(0);
@@ -92,7 +108,7 @@ public:
 
         verticalLayout->addWidget(label);
 
-        RvizzButton = new QPushButton(centralwidget);
+        RvizzButton = new QPushButton(tab_IndeximMenu);
         RvizzButton->setObjectName(QString::fromUtf8("RvizzButton"));
         QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy2.setHorizontalStretch(0);
@@ -103,7 +119,7 @@ public:
 
         verticalLayout->addWidget(RvizzButton);
 
-        graphButton = new QPushButton(centralwidget);
+        graphButton = new QPushButton(tab_IndeximMenu);
         graphButton->setObjectName(QString::fromUtf8("graphButton"));
         sizePolicy2.setHeightForWidth(graphButton->sizePolicy().hasHeightForWidth());
         graphButton->setSizePolicy(sizePolicy2);
@@ -111,7 +127,7 @@ public:
 
         verticalLayout->addWidget(graphButton);
 
-        rqtButton = new QPushButton(centralwidget);
+        rqtButton = new QPushButton(tab_IndeximMenu);
         rqtButton->setObjectName(QString::fromUtf8("rqtButton"));
         sizePolicy2.setHeightForWidth(rqtButton->sizePolicy().hasHeightForWidth());
         rqtButton->setSizePolicy(sizePolicy2);
@@ -119,14 +135,14 @@ public:
 
         verticalLayout->addWidget(rqtButton);
 
-        viewFramesButton = new QPushButton(centralwidget);
+        viewFramesButton = new QPushButton(tab_IndeximMenu);
         viewFramesButton->setObjectName(QString::fromUtf8("viewFramesButton"));
         sizePolicy2.setHeightForWidth(viewFramesButton->sizePolicy().hasHeightForWidth());
         viewFramesButton->setSizePolicy(sizePolicy2);
 
         verticalLayout->addWidget(viewFramesButton);
 
-        TeleopButton = new QPushButton(centralwidget);
+        TeleopButton = new QPushButton(tab_IndeximMenu);
         TeleopButton->setObjectName(QString::fromUtf8("TeleopButton"));
         sizePolicy2.setHeightForWidth(TeleopButton->sizePolicy().hasHeightForWidth());
         TeleopButton->setSizePolicy(sizePolicy2);
@@ -140,7 +156,14 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout_3);
 
-        label_2 = new QLabel(centralwidget);
+        line_3 = new QFrame(tab_IndeximMenu);
+        line_3->setObjectName(QString::fromUtf8("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_2->addWidget(line_3);
+
+        label_2 = new QLabel(tab_IndeximMenu);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
@@ -150,14 +173,14 @@ public:
 
         verticalLayout_2->addWidget(label_2);
 
-        mapLabel = new QLabel(centralwidget);
+        mapLabel = new QLabel(tab_IndeximMenu);
         mapLabel->setObjectName(QString::fromUtf8("mapLabel"));
         sizePolicy3.setHeightForWidth(mapLabel->sizePolicy().hasHeightForWidth());
         mapLabel->setSizePolicy(sizePolicy3);
 
         verticalLayout_2->addWidget(mapLabel);
 
-        selectMapButton = new QPushButton(centralwidget);
+        selectMapButton = new QPushButton(tab_IndeximMenu);
         selectMapButton->setObjectName(QString::fromUtf8("selectMapButton"));
         selectMapButton->setMaximumSize(QSize(550, 16777215));
 
@@ -166,9 +189,16 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_2);
 
+        line = new QFrame(tab_IndeximMenu);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_3->addWidget(line);
+
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
-        GazeboButton = new QPushButton(centralwidget);
+        GazeboButton = new QPushButton(tab_IndeximMenu);
         GazeboButton->setObjectName(QString::fromUtf8("GazeboButton"));
         QSizePolicy sizePolicy4(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy4.setHorizontalStretch(0);
@@ -179,7 +209,7 @@ public:
 
         verticalLayout_7->addWidget(GazeboButton);
 
-        SlamButton = new QPushButton(centralwidget);
+        SlamButton = new QPushButton(tab_IndeximMenu);
         SlamButton->setObjectName(QString::fromUtf8("SlamButton"));
         sizePolicy4.setHeightForWidth(SlamButton->sizePolicy().hasHeightForWidth());
         SlamButton->setSizePolicy(sizePolicy4);
@@ -187,7 +217,7 @@ public:
 
         verticalLayout_7->addWidget(SlamButton);
 
-        navigationButton = new QPushButton(centralwidget);
+        navigationButton = new QPushButton(tab_IndeximMenu);
         navigationButton->setObjectName(QString::fromUtf8("navigationButton"));
         sizePolicy4.setHeightForWidth(navigationButton->sizePolicy().hasHeightForWidth());
         navigationButton->setSizePolicy(sizePolicy4);
@@ -199,18 +229,25 @@ public:
         horizontalLayout_3->addLayout(verticalLayout_7);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 0, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout_3, 0, 0, 1, 1);
+
+        tabsimulationWidget->addTab(tab_IndeximMenu, QString());
+
+        gridLayout->addWidget(tabsimulationWidget, 1, 0, 1, 1);
 
         SimulationWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SimulationWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 899, 22));
+        menubar->setGeometry(QRect(0, 0, 844, 22));
         SimulationWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(SimulationWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         SimulationWindow->setStatusBar(statusbar);
 
         retranslateUi(SimulationWindow);
+
+        tabsimulationWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(SimulationWindow);
     } // setupUi
@@ -231,6 +268,7 @@ public:
         GazeboButton->setText(QCoreApplication::translate("SimulationWindow", "Run Gazebo", nullptr));
         SlamButton->setText(QCoreApplication::translate("SimulationWindow", "Run SLAM", nullptr));
         navigationButton->setText(QCoreApplication::translate("SimulationWindow", "Run Navigation", nullptr));
+        tabsimulationWidget->setTabText(tabsimulationWidget->indexOf(tab_IndeximMenu), QCoreApplication::translate("SimulationWindow", "Simulation menu", nullptr));
     } // retranslateUi
 
 };

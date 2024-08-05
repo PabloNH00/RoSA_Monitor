@@ -21,6 +21,8 @@ public:
         VIEW_FRAMES,
         TELEOP,
         FIRMWARE,
+        URDF,
+        LIDAR,
         GAZEBO_SIM,
         SLAM_SIM,
         NAVIGATION,

@@ -96,6 +96,12 @@ void LauncherManager::StopLauncher(LauncherType type){
          case FIRMWARE:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 run rosa_firmware rosa_driver --ros-args -p device_name:=/dev/ttyUSB0";
              break;
+         case URDF:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 launch rosa_description rosa_urdf_launch.py";
+             break;
+         case LIDAR:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 launch urg_node2 urg_node2.launch.py";
+             break;
          case GAZEBO_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && ros2 launch rosa_description rosa_gazebo_launch.py use_sim_time:=true";
              break;

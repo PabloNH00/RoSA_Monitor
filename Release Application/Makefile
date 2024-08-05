@@ -286,6 +286,54 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+rosawindow.o: rosawindow.cpp.o
+.PHONY : rosawindow.o
+
+# target to build an object file
+rosawindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.o
+.PHONY : rosawindow.cpp.o
+
+rosawindow.i: rosawindow.cpp.i
+.PHONY : rosawindow.i
+
+# target to preprocess a source file
+rosawindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.i
+.PHONY : rosawindow.cpp.i
+
+rosawindow.s: rosawindow.cpp.s
+.PHONY : rosawindow.s
+
+# target to generate assembly for a file
+rosawindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.s
+.PHONY : rosawindow.cpp.s
+
+shelloutputwindow.o: shelloutputwindow.cpp.o
+.PHONY : shelloutputwindow.o
+
+# target to build an object file
+shelloutputwindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o
+.PHONY : shelloutputwindow.cpp.o
+
+shelloutputwindow.i: shelloutputwindow.cpp.i
+.PHONY : shelloutputwindow.i
+
+# target to preprocess a source file
+shelloutputwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.i
+.PHONY : shelloutputwindow.cpp.i
+
+shelloutputwindow.s: shelloutputwindow.cpp.s
+.PHONY : shelloutputwindow.s
+
+# target to generate assembly for a file
+shelloutputwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.s
+.PHONY : shelloutputwindow.cpp.s
+
 simulationwindow.o: simulationwindow.cpp.o
 .PHONY : simulationwindow.o
 
@@ -338,6 +386,12 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... rosawindow.o"
+	@echo "... rosawindow.i"
+	@echo "... rosawindow.s"
+	@echo "... shelloutputwindow.o"
+	@echo "... shelloutputwindow.i"
+	@echo "... shelloutputwindow.s"
 	@echo "... simulationwindow.o"
 	@echo "... simulationwindow.i"
 	@echo "... simulationwindow.s"

@@ -67,7 +67,7 @@ Simulation window finished, under review
 
 ### Fixed
 - Now you can cancel workspace selection when requested from simulation window, same with rosa window
-
+- 
 ## [Versión 0.1.2] 
 
 ### Added
@@ -77,3 +77,12 @@ Simulation window finished, under review
 
 ### Fixed
 - Previous menu button now show selected menu window even if it wasn't minimized for previous click on main menu button
+
+## [Versión 0.1.3] 
+
+### Added
+- Launchers for RoSA URDF and Hokuyo LiDAr
+- New default tab for RoSA menu based on Simulation menu
+
+### Modified
+- RoSA Window GUI layout

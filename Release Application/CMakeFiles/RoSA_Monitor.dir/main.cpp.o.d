@@ -310,6 +310,10 @@ CMakeFiles/RoSA_Monitor.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/launchermanager.h \
  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/Launcher.h \
+ /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+ /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
