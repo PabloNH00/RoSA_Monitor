@@ -2,7 +2,7 @@
 #define LAUNCHER_H
 
 #include <QProcess>
-#include<QDebug>
+#include <QDebug>
 
 /*************************************************
  *          INTERFACE FOR  A SINGLE LAUNCHER     *

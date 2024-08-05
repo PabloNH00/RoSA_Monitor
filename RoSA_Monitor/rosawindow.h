@@ -8,6 +8,7 @@
 #include <QFileDialog>
 
 #include "launchermanager.h"
+#include "shelloutputwindow.h"
 
 namespace Ui {
 class RosaWindow;
@@ -56,13 +57,22 @@ protected:
     //Ask if close Rviz bc launcher already open a predefined Rviz
     void QuestionRvizClose(QPushButton* buttonClicked);
 
-    //Set buttons state to off when window is closed
-    void shutDownWindow();
+    //Delete a shell tab and reorganize index
+    void RemoveTab(LauncherManager::LauncherType type);
 
 private:
     Ui::RosaWindow *ui;
 
-   LauncherManager manager;
+
+    LauncherManager manager;
+
+    int numOfTabs;
+
+    //Index assigned for each active tab; 0 if not active
+    int tab_Index[LauncherManager::NUMBER_OF_LAUNCHERS];
+
+    //Array of shellWindows objects for independent tabs
+    ShellOutputWindow* shellWindows[LauncherManager::NUMBER_OF_LAUNCHERS];
 };
 
 #endif // ROSAWINDOW_H

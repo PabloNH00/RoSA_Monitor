@@ -3,18 +3,26 @@
 
 RosaWindow::RosaWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::RosaWindow)
+    ui(new Ui::RosaWindow), numOfTabs(2)//2 cuando este hecho el tab debug
 {
     ui->setupUi(this);
+
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        tab_Index[i] = 0;
+        shellWindows[i] = nullptr;
+    }
 }
 
 RosaWindow::~RosaWindow()
 {
-
-    if (manager.GetLauncher(LauncherManager::FIRMWARE)->GetActive()) {
-        manager.StopLauncher(LauncherManager::FIRMWARE);
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        if(shellWindows[i] != nullptr)
+        {
+            delete shellWindows[i];
+        }
     }
-
     delete ui;
 }
 
@@ -34,7 +42,6 @@ void RosaWindow::closeEvent(QCloseEvent *event)
         if (disclaimer == QMessageBox::Yes)
         {
             running = false;
-            shutDownWindow();
             manager.ShutdownLaunchers();
             emit windowClosed();
             event->accept();
@@ -139,10 +146,18 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         }
         else
         {
+            //Create shell window and connect shell output of process launcher to the read output slot
+            shellWindows[type] = new ShellOutputWindow(this, manager.GetLauncher(type)->GetLauncherProcess());
+            connect(manager.GetLauncher(type)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[type], &ShellOutputWindow::readProcessOutput);
+
             //Launch process
             manager.Launch(type);
             button->setChecked(true);
             button->setText("Stop " + name);
+
+            //Add new tab
+            ui->tabRoSAWidget->addTab(shellWindows[type], name + " shell");
+            tab_Index[type] = numOfTabs++;
             return true;
         }
     }
@@ -151,6 +166,11 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         button->setText("Run " + name);
         manager.StopLauncher(type);
         button->setChecked(false);
+
+        //Delete tab
+        shellWindows[type] = nullptr;
+        RemoveTab(type);
+
         return true;
     }
 }
@@ -187,21 +207,23 @@ bool RosaWindow::FirstLaunchGazebo(QPushButton* buttonClicked)
     return true;
 }
 */
-void RosaWindow::shutDownWindow()
+
+void RosaWindow::RemoveTab(LauncherManager::LauncherType type)
 {
+    //Delete tab
+    ui->tabRoSAWidget->removeTab(tab_Index[type]);
+    numOfTabs--;
 
-    ui->firmwareButton->setChecked(false);
-    ui->firmwareButton->setText("Run Firmware");
-/*
-    ui->rqtButton->setChecked(false);
-    ui->rqtButton->setText("Run rqt");
+    //Update index of tab_Index[]
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        if(tab_Index[i] > tab_Index[type])
+        {
+            tab_Index[i]--;
+        }
+    }
 
-    ui->graphButton->setChecked(false);
-    ui->graphButton->setText("Run rqt_graph");
-
-    ui->TeleopButton->setChecked(false);
-    ui->TeleopButton->setText("Run teleop_twist");
-    */
-
+    tab_Index[type] = 0;
 }
+
 

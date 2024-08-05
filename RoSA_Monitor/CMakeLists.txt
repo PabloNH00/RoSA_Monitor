@@ -20,17 +20,20 @@ set(PROJECT_SOURCES
         rosawindow.cpp
         simulationwindow.cpp
         launchermanager.cpp
-        Launcher.cpp       
+        Launcher.cpp
+        shelloutputwindow.cpp
 
         mainwindow.h
         rosawindow.h
         simulationwindow.h
         launchermanager.h
         Launcher.h
+        shelloutputwindow.h
 
         mainwindow.ui
         simulationwindow.ui
         rosawindow.ui
+        shelloutputwindow.ui
 
         resources.qrc
 )

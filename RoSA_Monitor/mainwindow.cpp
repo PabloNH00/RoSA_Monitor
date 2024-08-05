@@ -117,6 +117,9 @@ void MainWindow::onSimulationWindowClosed()
         *workspace = *simWindow->getWorkspace();
         ui->workspace_selected->setText(workspace->dirName());
     }
+    //Prepare another simulation window
+    delete simWindow;
+    simWindow = new SimulationWindow(this);
 }
 
 
@@ -159,7 +162,7 @@ void MainWindow::on_RosaButton_clicked()
 
             ui->RosaButton->setChecked(false);
 
-            ui->RosaButton->setText("Enter simulation menu");
+            ui->RosaButton->setText("Enter RoSA menu");
             activeWindow = MAIN_WINDOW;
         }
         else
@@ -180,7 +183,7 @@ void MainWindow::onRosaWindowClosed()
 {
     //Once simulation window is closed set checked to false and update actual window and workspace
     ui->RosaButton->setChecked(false);
-    ui->RosaButton->setText("Enter simulation menu");
+    ui->RosaButton->setText("Enter RoSA menu");
     activeWindow = MAIN_WINDOW;
 
     //Save workspace if selected on simulation window
@@ -190,6 +193,8 @@ void MainWindow::onRosaWindowClosed()
         *workspace = *rosaWindow->getWorkspace();
         ui->workspace_selected->setText(workspace->dirName());
     }
+    delete rosaWindow;
+    rosaWindow = new RosaWindow(this);
 }
 
 void MainWindow::on_select_workspace_button_clicked()
@@ -231,11 +236,19 @@ void MainWindow::on_previousMenuButton_clicked()
         {
             simWindow->show();
         }
+        else
+        {
+            simWindow->raise();
+        }
         break;
     case ROSA_WINDOW:
         if(rosaWindow->isHidden())
         {
             rosaWindow->show();
+        }
+        else
+        {
+            rosaWindow->raise();
         }
         break;
     default:

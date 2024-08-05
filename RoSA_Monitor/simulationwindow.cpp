@@ -4,18 +4,22 @@
 
 SimulationWindow::SimulationWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::SimulationWindow)
+    ui(new Ui::SimulationWindow), numOfTabs(1)
 {
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        tab_Index[i] = 0;
+        shellWindows[i] = nullptr;
+    }
     ui->setupUi(this);
 }
 
 SimulationWindow::~SimulationWindow()
 {
-    if (manager.GetLauncher(LauncherManager::SLAM_SIM)->GetActive()) {
-        manager.StopLauncher(LauncherManager::SLAM_SIM);
-    }
-    if (manager.GetLauncher(LauncherManager::GAZEBO_SIM)->GetActive()) {
-        manager.StopLauncher(LauncherManager::GAZEBO_SIM);
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        if(shellWindows[i] != nullptr)
+            delete shellWindows[i];
     }
     delete ui;
 }
@@ -35,7 +39,6 @@ void SimulationWindow::closeEvent(QCloseEvent *event)
         if (disclaimer == QMessageBox::Yes)
         {
             running = false;
-            shutDownWindow();
             manager.ShutdownLaunchers();
             emit windowClosed();
             event->accept();
@@ -110,11 +113,19 @@ void SimulationWindow::on_SlamButton_clicked()
             }
             else
             {
+                //Create shell window and connect shell output of process launcher to the read output slot
+                shellWindows[LauncherManager::SLAM_SIM] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess());
+                connect(manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::SLAM_SIM], &ShellOutputWindow::readProcessOutput);
+
                 //Run the process
                 manager.Launch(LauncherManager::SLAM_SIM);
                 ui->SlamButton->setChecked(true);
+                ui->SlamButton->setText("Stop SLAM");
+
+                //Add new tab
+                ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::SLAM_SIM], "SLAM shell");
+                tab_Index[LauncherManager::SLAM_SIM] = numOfTabs++;
             }
-            ui->SlamButton->setText("Stop SLAM");
         }
 
     }
@@ -124,6 +135,10 @@ void SimulationWindow::on_SlamButton_clicked()
         ui->SlamButton->setText("Run SLAM");
         manager.StopLauncher(LauncherManager::SLAM_SIM);
         ui->SlamButton->setChecked(false);
+
+        //Delete tab
+        shellWindows[LauncherManager::SLAM_SIM] = nullptr;
+        RemoveTab(LauncherManager::SLAM_SIM);
     }
 }
 
@@ -230,11 +245,19 @@ void SimulationWindow::on_navigationButton_clicked()
             }
             else
             {
+                //Create shell window and connect shell output of process launcher to the read output slot
+                shellWindows[LauncherManager::NAVIGATION] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess());
+                connect(manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::NAVIGATION], &ShellOutputWindow::readProcessOutput);
+
                 //Launch process
                 manager.Launch(LauncherManager::NAVIGATION);
                 ui->navigationButton->setChecked(true);
+                ui->navigationButton->setText("Stop Navigation");
+
+                //Add new tab
+                ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NAVIGATION], "Navigation shell");
+                tab_Index[LauncherManager::NAVIGATION] = numOfTabs++;
             }
-            ui->navigationButton->setText("Stop Navigation");
         }
 
     }
@@ -244,6 +267,10 @@ void SimulationWindow::on_navigationButton_clicked()
         ui->navigationButton->setText("Run Navigation");
         manager.StopLauncher(LauncherManager::NAVIGATION);
         ui->navigationButton->setChecked(false);
+
+        //Delete tab
+        shellWindows[LauncherManager::NAVIGATION] = nullptr;
+        RemoveTab(LauncherManager::NAVIGATION);
     }
 }
 
@@ -408,10 +435,19 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         }
         else
         {
+            //Create shell window and connect shell output of process launcher to the read output slot
+            shellWindows[type] = new ShellOutputWindow(this, manager.GetLauncher(type)->GetLauncherProcess());
+            connect(manager.GetLauncher(type)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[type], &ShellOutputWindow::readProcessOutput);
+
             //Launch process
             manager.Launch(type);
             button->setChecked(true);
             button->setText("Stop " + name);
+
+            //Add new tab
+            ui->tabsimulationWidget->addTab(shellWindows[type], name + " shell");
+            tab_Index[type] = numOfTabs++;
+
             return true;
         }
     }
@@ -420,6 +456,11 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         button->setText("Run " + name);
         manager.StopLauncher(type);
         button->setChecked(false);
+
+        //Delete tab
+        shellWindows[type] = nullptr;
+        RemoveTab(type);
+
         return true;
     }
 }
@@ -455,30 +496,21 @@ bool SimulationWindow::FirstLaunchGazebo(QPushButton* buttonClicked)
     return true;
 }
 
-void SimulationWindow::shutDownWindow()
+void SimulationWindow::RemoveTab(LauncherManager::LauncherType type)
 {
-    ui->GazeboButton->setChecked(false);
-    ui->GazeboButton->setText("Run Gazebo");
+    //Delete tab
+    ui->tabsimulationWidget->removeTab(tab_Index[type]);
+    numOfTabs--;
 
-    ui->SlamButton->setChecked(false);
-    ui->SlamButton->setText("Run SLAM");
+    //Update index of tab_Index[]
+    for(int i = 0; i < LauncherManager::NUMBER_OF_LAUNCHERS; i++)
+    {
+        if(tab_Index[i] > tab_Index[type])
+        {
+            tab_Index[i]--;
+        }
+    }
 
-    ui->navigationButton->setChecked(false);
-    ui->navigationButton->setText("Run Navigation");
-
-    ui->RvizzButton->setChecked(false);
-    ui->RvizzButton->setText("Run RVIZ2");
-
-    ui->rqtButton->setChecked(false);
-    ui->rqtButton->setText("Run rqt");
-
-    ui->graphButton->setChecked(false);
-    ui->graphButton->setText("Run rqt_graph");
-
-    ui->TeleopButton->setChecked(false);
-    ui->TeleopButton->setText("Run teleop_twist");
-
-    ///////
-
+    tab_Index[type] = 0;
 }
 

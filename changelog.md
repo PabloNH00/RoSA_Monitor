@@ -67,3 +67,13 @@ Simulation window finished, under review
 
 ### Fixed
 - Now you can cancel workspace selection when requested from simulation window, same with rosa window
+
+## [Versión 0.1.2] 
+
+### Added
+- TabWidget that open tabs with the console output for each launcher activated
+- ShellOutputWindow: Window instanced for each tab with a plain text widget for printing the console std output
+- Management of tabs to close them when its launcher closes
+
+### Fixed
+- Previous menu button now show selected menu window even if it wasn't minimized for previous click on main menu button
