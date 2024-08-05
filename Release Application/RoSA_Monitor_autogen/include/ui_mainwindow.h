@@ -185,7 +185,7 @@ public:
         RosaButton->setText(QCoreApplication::translate("MainWindow", "Start RoSA Menu", nullptr));
         EnterSimButton->setText(QCoreApplication::translate("MainWindow", "Enter Simulation Mode", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "                                                                                                     RoSa Monitor", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "                                                                                                       Version 0.1.6", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "                                                                                                       Version 0.1.7", nullptr));
         imgUPM->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         imgETSIDI->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi

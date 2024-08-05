@@ -104,4 +104,10 @@ During integration test
 - Button on RoSA debug tools for esp32 monitor
 
 ### Fixed
-- Restrictions about llaunchin slam or nav. without FW URDF or LiDAR
+- Restrictions about llaunching slam or nav. without FW URDF or LiDAR
+
+## [Versión 0.1.7] 
+During integration test
+### Fixed
+- Restrictions about llaunching slam or nav. only launch unnactive processes if at least one of them is unnactive
+- esp32 button text and checked
