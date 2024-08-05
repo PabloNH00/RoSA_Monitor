@@ -86,3 +86,8 @@ Simulation window finished, under review
 
 ### Modified
 - RoSA Window GUI layout
+
+## [Versión 0.1.4] 
+During integration test
+### Fixed
+- Asked to launch firmware when gazebo instead of firmware is not launched

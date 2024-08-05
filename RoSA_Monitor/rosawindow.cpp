@@ -516,9 +516,9 @@ void RosaWindow::QuestionRvizClose(QPushButton *buttonClicked)
 
 bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
 {
-    if(!manager.GetLauncher(LauncherManager::GAZEBO_SIM)->GetActive())
+    if(!manager.GetLauncher(LauncherManager::FIRMWARE)->GetActive())
     {
-        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start RoSA Firmware\nLaunch Gazebo?"));
+        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start RoSA Firmware\nLaunch Firmware?"));
         if(disclaimer == QMessageBox::No)
         {
             buttonClicked->setChecked(false);
