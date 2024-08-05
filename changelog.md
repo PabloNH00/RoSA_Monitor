@@ -91,3 +91,9 @@ Simulation window finished, under review
 During integration test
 ### Fixed
 - Asked to launch firmware when gazebo instead of firmware is not launched
+
+## [Versión 0.1.5] 
+During integration test
+### Fixed
+- Launchers for SLAM and NAVIGATION now different in sim and RoSA due to "use_sim_time" param
+- Rviz tab close when launcher is stoped for a question to user

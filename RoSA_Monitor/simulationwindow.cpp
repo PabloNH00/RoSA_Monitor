@@ -202,7 +202,7 @@ void SimulationWindow::on_navigationButton_clicked()
         ui->navigationButton->setChecked(false);
         return;
     }
-    if(!manager.GetLauncher(LauncherManager::NAVIGATION)->GetActive())
+    if(!manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetActive())
     {
         QuestionRvizClose(ui->RvizzButton);
         if(!FirstLaunchGazebo(ui->navigationButton))
@@ -212,7 +212,7 @@ void SimulationWindow::on_navigationButton_clicked()
         else
         {
             //If this process is executing do not duplicate
-            if (manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess() != nullptr)
+            if (manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetLauncherProcess() != nullptr)
             {
                 qDebug() << "Process already executing.";
                 return;
@@ -239,24 +239,24 @@ void SimulationWindow::on_navigationButton_clicked()
                 }
             }
             //Create new process
-            if(!manager.CreateLauncher(LauncherManager::NAVIGATION, new QProcess(this)))
+            if(!manager.CreateLauncher(LauncherManager::NAVIGATION_SIM, new QProcess(this)))
             {
                 return;
             }
             else
             {
                 //Create shell window and connect shell output of process launcher to the read output slot
-                shellWindows[LauncherManager::NAVIGATION] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess());
-                connect(manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::NAVIGATION], &ShellOutputWindow::readProcessOutput);
+                shellWindows[LauncherManager::NAVIGATION_SIM] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetLauncherProcess());
+                connect(manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::NAVIGATION_SIM], &ShellOutputWindow::readProcessOutput);
 
                 //Launch process
-                manager.Launch(LauncherManager::NAVIGATION);
+                manager.Launch(LauncherManager::NAVIGATION_SIM);
                 ui->navigationButton->setChecked(true);
                 ui->navigationButton->setText("Stop Navigation");
 
                 //Add new tab
-                ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NAVIGATION], "Navigation shell");
-                tab_Index[LauncherManager::NAVIGATION] = numOfTabs++;
+                ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NAVIGATION_SIM], "Navigation shell");
+                tab_Index[LauncherManager::NAVIGATION_SIM] = numOfTabs++;
             }
         }
 
@@ -265,12 +265,12 @@ void SimulationWindow::on_navigationButton_clicked()
     else
     {
         ui->navigationButton->setText("Run Navigation");
-        manager.StopLauncher(LauncherManager::NAVIGATION);
+        manager.StopLauncher(LauncherManager::NAVIGATION_SIM);
         ui->navigationButton->setChecked(false);
 
         //Delete tab
-        shellWindows[LauncherManager::NAVIGATION] = nullptr;
-        RemoveTab(LauncherManager::NAVIGATION);
+        shellWindows[LauncherManager::NAVIGATION_SIM] = nullptr;
+        RemoveTab(LauncherManager::NAVIGATION_SIM);
     }
 }
 
@@ -474,6 +474,10 @@ void SimulationWindow::QuestionRvizClose(QPushButton *buttonClicked)
             manager.StopLauncher(LauncherManager::RVIZZ2);
             buttonClicked->setChecked(false);
             ui->RvizzButton->setText("Run Rvizz2");
+
+            //Delete tab
+            shellWindows[LauncherManager::RVIZZ2] = nullptr;
+            RemoveTab(LauncherManager::RVIZZ2);
         }
     }
 }

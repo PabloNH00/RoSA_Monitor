@@ -123,7 +123,7 @@ void RosaWindow::on_lidarButton_clicked()
 
 void RosaWindow::on_SlamButton_clicked()
 {
-    if(!manager.GetLauncher(LauncherManager::SLAM_SIM)->GetActive())
+    if(!manager.GetLauncher(LauncherManager::SLAM)->GetActive())
     {
         QuestionRvizClose(ui->RvizzButton);
         if(!FirstLaunchFirmware(ui->SlamButton))
@@ -133,30 +133,30 @@ void RosaWindow::on_SlamButton_clicked()
         else
         {
             //If this process is executing do not duplicate
-            if (manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess() != nullptr)
+            if (manager.GetLauncher(LauncherManager::SLAM)->GetLauncherProcess() != nullptr)
             {
                 qDebug() << "Process already executing.";
                 return;
             }
             //Create new process
-            if(!manager.CreateLauncher(LauncherManager::SLAM_SIM, new QProcess(this)))
+            if(!manager.CreateLauncher(LauncherManager::SLAM, new QProcess(this)))
             {
                 return;
             }
             else
             {
                 //Create shell window and connect shell output of process launcher to the read output slot
-                shellWindows[LauncherManager::SLAM_SIM] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess());
-                connect(manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::SLAM_SIM], &ShellOutputWindow::readProcessOutput);
+                shellWindows[LauncherManager::SLAM] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::SLAM)->GetLauncherProcess());
+                connect(manager.GetLauncher(LauncherManager::SLAM)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::SLAM], &ShellOutputWindow::readProcessOutput);
 
                 //Run the process
-                manager.Launch(LauncherManager::SLAM_SIM);
+                manager.Launch(LauncherManager::SLAM);
                 ui->SlamButton->setChecked(true);
                 ui->SlamButton->setText("Stop SLAM");
 
                 //Add new tab
-                ui->tabRoSAWidget->addTab(shellWindows[LauncherManager::SLAM_SIM], "SLAM shell");
-                tab_Index[LauncherManager::SLAM_SIM] = numOfTabs++;
+                ui->tabRoSAWidget->addTab(shellWindows[LauncherManager::SLAM], "SLAM shell");
+                tab_Index[LauncherManager::SLAM] = numOfTabs++;
             }
         }
 
@@ -165,12 +165,12 @@ void RosaWindow::on_SlamButton_clicked()
     else
     {
         ui->SlamButton->setText("Run SLAM");
-        manager.StopLauncher(LauncherManager::SLAM_SIM);
+        manager.StopLauncher(LauncherManager::SLAM);
         ui->SlamButton->setChecked(false);
 
         //Delete tab
-        shellWindows[LauncherManager::SLAM_SIM] = nullptr;
-        RemoveTab(LauncherManager::SLAM_SIM);
+        shellWindows[LauncherManager::SLAM] = nullptr;
+        RemoveTab(LauncherManager::SLAM);
     }
 }
 
@@ -178,7 +178,7 @@ void RosaWindow::on_SlamButton_clicked()
 void RosaWindow::on_navigationButton_clicked()
 {
     //Check if SLAM is active
-    if(manager.GetLauncher(LauncherManager::SLAM_SIM)->GetActive())
+    if(manager.GetLauncher(LauncherManager::SLAM)->GetActive())
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("Can not open navigation while mapping"));
         ui->navigationButton->setChecked(false);
@@ -510,6 +510,10 @@ void RosaWindow::QuestionRvizClose(QPushButton *buttonClicked)
             manager.StopLauncher(LauncherManager::RVIZZ2);
             buttonClicked->setChecked(false);
             ui->RvizzButton->setText("Run Rvizz2");
+
+            //Delete tab
+            shellWindows[LauncherManager::RVIZZ2] = nullptr;
+            RemoveTab(LauncherManager::RVIZZ2);
         }
     }
 }

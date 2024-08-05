@@ -23,9 +23,11 @@ public:
         FIRMWARE,
         URDF,
         LIDAR,
+        SLAM,
+        NAVIGATION,
         GAZEBO_SIM,
         SLAM_SIM,
-        NAVIGATION,
+        NAVIGATION_SIM,
         NUMBER_OF_LAUNCHERS
     } LauncherType ;
 
