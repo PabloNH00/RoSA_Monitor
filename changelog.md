@@ -67,7 +67,7 @@ Simulation window finished, under review
 
 ### Fixed
 - Now you can cancel workspace selection when requested from simulation window, same with rosa window
-- 
+  
 ## [Versión 0.1.2] 
 
 ### Added
@@ -89,17 +89,20 @@ Simulation window finished, under review
 
 ## [Versión 0.1.4] 
 During integration test
+
 ### Fixed
 - Asked to launch firmware when gazebo instead of firmware is not launched
 
 ## [Versión 0.1.5] 
 During integration test
+
 ### Fixed
 - Launchers for SLAM and NAVIGATION now different in sim and RoSA due to "use_sim_time" param
 - Rviz tab close when launcher is stoped for a question to user
 
 ## [Versión 0.1.6] 
 During integration test
+
 ### Added
 - Button on RoSA debug tools for esp32 monitor
 
@@ -108,6 +111,16 @@ During integration test
 
 ## [Versión 0.1.7] 
 During integration test
+
 ### Fixed
 - Restrictions about llaunching slam or nav. only launch unnactive processes if at least one of them is unnactive
 - esp32 button text and checked
+
+## [Versión 0.1.8] 
+
+### Added
+- Launch RoSA button that opens a checkboxes window to select components of RoSA to launch
+
+### Modified
+- Debug and execution info now showed on status bar down the monitor screen
+- GUI distribution layout for RoSA Components tab

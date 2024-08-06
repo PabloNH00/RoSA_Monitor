@@ -310,6 +310,30 @@ rosawindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.s
 .PHONY : rosawindow.cpp.s
 
+selectrosacomponents.o: selectrosacomponents.cpp.o
+.PHONY : selectrosacomponents.o
+
+# target to build an object file
+selectrosacomponents.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o
+.PHONY : selectrosacomponents.cpp.o
+
+selectrosacomponents.i: selectrosacomponents.cpp.i
+.PHONY : selectrosacomponents.i
+
+# target to preprocess a source file
+selectrosacomponents.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.i
+.PHONY : selectrosacomponents.cpp.i
+
+selectrosacomponents.s: selectrosacomponents.cpp.s
+.PHONY : selectrosacomponents.s
+
+# target to generate assembly for a file
+selectrosacomponents.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.s
+.PHONY : selectrosacomponents.cpp.s
+
 shelloutputwindow.o: shelloutputwindow.cpp.o
 .PHONY : shelloutputwindow.o
 
@@ -389,6 +413,9 @@ help:
 	@echo "... rosawindow.o"
 	@echo "... rosawindow.i"
 	@echo "... rosawindow.s"
+	@echo "... selectrosacomponents.o"
+	@echo "... selectrosacomponents.i"
+	@echo "... selectrosacomponents.s"
 	@echo "... shelloutputwindow.o"
 	@echo "... shelloutputwindow.i"
 	@echo "... shelloutputwindow.s"

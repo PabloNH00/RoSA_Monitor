@@ -36,8 +36,9 @@ public:
     QVBoxLayout *verticalLayout_5;
     QPushButton *mainMenuButton;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *firmwareButton;
+    QPushButton *rosaButton;
     QHBoxLayout *horizontalLayout;
+    QPushButton *firmwareButton;
     QPushButton *URDFButton;
     QPushButton *lidarButton;
     QPushButton *cameraButton;
@@ -97,19 +98,27 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        firmwareButton = new QPushButton(tabRosaMenu);
-        firmwareButton->setObjectName(QString::fromUtf8("firmwareButton"));
+        rosaButton = new QPushButton(tabRosaMenu);
+        rosaButton->setObjectName(QString::fromUtf8("rosaButton"));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(rosaButton->sizePolicy().hasHeightForWidth());
+        rosaButton->setSizePolicy(sizePolicy1);
+        rosaButton->setCheckable(false);
+
+        verticalLayout_4->addWidget(rosaButton);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        firmwareButton = new QPushButton(tabRosaMenu);
+        firmwareButton->setObjectName(QString::fromUtf8("firmwareButton"));
         sizePolicy1.setHeightForWidth(firmwareButton->sizePolicy().hasHeightForWidth());
         firmwareButton->setSizePolicy(sizePolicy1);
         firmwareButton->setCheckable(true);
 
-        verticalLayout_4->addWidget(firmwareButton);
+        horizontalLayout->addWidget(firmwareButton);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         URDFButton = new QPushButton(tabRosaMenu);
         URDFButton->setObjectName(QString::fromUtf8("URDFButton"));
         sizePolicy1.setHeightForWidth(URDFButton->sizePolicy().hasHeightForWidth());
@@ -328,6 +337,7 @@ public:
     {
         RosaWindow->setWindowTitle(QCoreApplication::translate("RosaWindow", "MainWindow", nullptr));
         mainMenuButton->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));
+        rosaButton->setText(QCoreApplication::translate("RosaWindow", "Launch RoSA", nullptr));
         firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Firmware", nullptr));
         URDFButton->setText(QCoreApplication::translate("RosaWindow", "Run URDF", nullptr));
         lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run Hokuyo LiDAR", nullptr));

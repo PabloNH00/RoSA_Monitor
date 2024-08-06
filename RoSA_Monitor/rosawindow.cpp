@@ -76,6 +76,49 @@ QDir* RosaWindow::getWorkspace()
 /****************************************************
 *               SLOT FUNCTIONS                      *
 ****************************************************/
+void RosaWindow::on_rosaButton_clicked()
+{
+    if(manager.GetLauncher(LauncherManager::FIRMWARE)->GetActive() ||
+       manager.GetLauncher(LauncherManager::LIDAR)->GetActive()    ||
+       manager.GetLauncher(LauncherManager::URDF)->GetActive())
+    {
+        QMessageBox::information(this, tr("RoSA Info"), tr("For a clean launch first stop components running or use below buttons to activate individual components"));
+        ui->statusbar->showMessage("First stop all components", 5000);
+        return;
+    }
+
+    //Open checkbox window with components
+    SelectRosaComponents selectWindow(this);
+    if (selectWindow.exec() == QDialog::Accepted)
+    {
+       QList<QCheckBox*> selectedCheckBoxes = selectWindow.getSelectedComponents();
+
+       //Launch checked components
+       for (QCheckBox *checkBox : selectedCheckBoxes)
+       {
+           if(checkBox->isChecked())
+           {
+               if(checkBox->objectName() == "firmwareCheckbox")
+               {
+                    on_firmwareButton_clicked();
+               }
+               if(checkBox->objectName() == "urdfCheckbox")
+               {
+                    on_URDFButton_clicked();
+               }
+               if(checkBox->objectName() == "lidarCheckbox")
+               {
+                    on_lidarButton_clicked();
+               }
+               if(checkBox->objectName() == "cameraCheckbox")
+               {
+                    //TO DO
+               }
+           }
+       }
+    }
+}
+
 
 void RosaWindow::on_firmwareButton_clicked()
 {
@@ -135,12 +178,14 @@ void RosaWindow::on_SlamButton_clicked()
             //If this process is executing do not duplicate
             if (manager.GetLauncher(LauncherManager::SLAM)->GetLauncherProcess() != nullptr)
             {
-                qDebug() << "Process already executing.";
+                ui->statusbar->showMessage("Process SLAM already executing", 5000);
                 return;
             }
             //Create new process
             if(!manager.CreateLauncher(LauncherManager::SLAM, new QProcess(this)))
             {
+                ui->statusbar->showMessage("Launch failed", 5000);
+
                 return;
             }
             else
@@ -153,6 +198,8 @@ void RosaWindow::on_SlamButton_clicked()
                 manager.Launch(LauncherManager::SLAM);
                 ui->SlamButton->setChecked(true);
                 ui->SlamButton->setText("Stop SLAM");
+
+                ui->statusbar->showMessage("Launching SLAM", 5000);
 
                 //Add new tab
                 ui->tabRoSAWidget->addTab(shellWindows[LauncherManager::SLAM], "SLAM shell");
@@ -168,6 +215,8 @@ void RosaWindow::on_SlamButton_clicked()
         manager.StopLauncher(LauncherManager::SLAM);
         ui->SlamButton->setChecked(false);
 
+        ui->statusbar->showMessage("Stopping SLAM", 5000);
+
         //Delete tab
         shellWindows[LauncherManager::SLAM] = nullptr;
         RemoveTab(LauncherManager::SLAM);
@@ -182,6 +231,9 @@ void RosaWindow::on_navigationButton_clicked()
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("Can not open navigation while mapping"));
         ui->navigationButton->setChecked(false);
+
+        ui->statusbar->showMessage("Close SLAM before launch navigation", 5000);
+
         return;
     }
     if(!manager.GetLauncher(LauncherManager::NAVIGATION)->GetActive())
@@ -196,7 +248,7 @@ void RosaWindow::on_navigationButton_clicked()
             //If this process is executing do not duplicate
             if (manager.GetLauncher(LauncherManager::NAVIGATION)->GetLauncherProcess() != nullptr)
             {
-                qDebug() << "Process already executing.";
+                ui->statusbar->showMessage("Process Navigation already executing", 5000);
                 return;
             }
 
@@ -210,6 +262,8 @@ void RosaWindow::on_navigationButton_clicked()
                 //If no map selected cancel launch
                 if(map_name.isEmpty())
                 {
+                    ui->statusbar->showMessage("No map selected, launch aborted", 5000);
+
                     ui->navigationButton->setChecked(false);
                     return;
                 }
@@ -223,6 +277,8 @@ void RosaWindow::on_navigationButton_clicked()
             //Create new process
             if(!manager.CreateLauncher(LauncherManager::NAVIGATION, new QProcess(this)))
             {
+                ui->statusbar->showMessage("Launch failed", 5000);
+
                 return;
             }
             else
@@ -235,6 +291,8 @@ void RosaWindow::on_navigationButton_clicked()
                 manager.Launch(LauncherManager::NAVIGATION);
                 ui->navigationButton->setChecked(true);
                 ui->navigationButton->setText("Stop Navigation");
+
+                ui->statusbar->showMessage("Launching Navigation", 5000);
 
                 //Add new tab
                 ui->tabRoSAWidget->addTab(shellWindows[LauncherManager::NAVIGATION], "Navigation shell");
@@ -249,6 +307,8 @@ void RosaWindow::on_navigationButton_clicked()
         ui->navigationButton->setText("Run Navigation");
         manager.StopLauncher(LauncherManager::NAVIGATION);
         ui->navigationButton->setChecked(false);
+
+        ui->statusbar->showMessage("Stopping Navigation", 5000);
 
         //Delete tab
         shellWindows[LauncherManager::NAVIGATION] = nullptr;
@@ -313,9 +373,13 @@ void RosaWindow::on_viewFramesButton_clicked()
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("You have to select a ROS2 workspace first"));
         QString workspace_name = "";
-        while(workspace_name =="")
+
+        workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+
+        if(workspace_name == "")
         {
-            workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+            ui->statusbar->showMessage("No workspace selected", 5000);
+            return;
         }
         SetWorkspace(workspace_name);
 
@@ -335,6 +399,8 @@ void RosaWindow::on_viewFramesButton_clicked()
     QString dirName= QFileDialog::getExistingDirectory(this, "Select directory to save transform tree", QDir::homePath(), QFileDialog::ShowDirsOnly);
     if(dirName == "")
     {
+        ui->statusbar->showMessage("No valid directory", 5000);
+
         return;
     }
     else
@@ -418,6 +484,7 @@ void RosaWindow::on_selectMapButton_clicked()
 
     if(map_name.isEmpty())
     {
+        ui->statusbar->showMessage("No map selected", 5000);
         return;
     }
     else
@@ -455,6 +522,8 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
         if(workspace_name == "")
         {
+            ui->statusbar->showMessage("No workspace selected", 5000);
+
             return false;
         }
         SetWorkspace(workspace_name);
@@ -474,13 +543,14 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         //If this process is executing do not duplicate
         if (manager.GetLauncher(type)->GetLauncherProcess() != nullptr)
         {
-            qDebug() << "Process already executing.";
+            ui->statusbar->showMessage("Process " + name + " already executing", 5000);
             return false;
         }
 
         //Create new process
         if(!manager.CreateLauncher(type, new QProcess(this)))
         {
+            ui->statusbar->showMessage("Launch failed", 5000);
             return false;
         }
         else
@@ -494,6 +564,8 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
             button->setChecked(true);
             button->setText("Stop " + name);
 
+            ui->statusbar->showMessage("Launching " + name, 5000);
+
             //Add new tab
             ui->tabRoSAWidget->addTab(shellWindows[type], name + " shell");
             tab_Index[type] = numOfTabs++;
@@ -505,6 +577,8 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         button->setText("Run " + name);
         manager.StopLauncher(type);
         button->setChecked(false);
+
+        ui->statusbar->showMessage("Stopping " + name, 5000);
 
         //Delete tab
         shellWindows[type] = nullptr;
@@ -525,6 +599,8 @@ void RosaWindow::QuestionRvizClose(QPushButton *buttonClicked)
             buttonClicked->setChecked(false);
             ui->RvizzButton->setText("Run Rvizz2");
 
+            ui->statusbar->showMessage("Closing Rviz", 5000);
+
             //Delete tab
             shellWindows[LauncherManager::RVIZZ2] = nullptr;
             RemoveTab(LauncherManager::RVIZZ2);
@@ -542,6 +618,7 @@ bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
         if(disclaimer == QMessageBox::No)
         {
             buttonClicked->setChecked(false);
+            ui->statusbar->showMessage("Launch aborted", 5000);
             return false;
         }
         else
@@ -580,4 +657,6 @@ void RosaWindow::RemoveTab(LauncherManager::LauncherType type)
 
     tab_Index[type] = 0;
 }
+
+
 

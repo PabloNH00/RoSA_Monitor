@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Set the actial window to MAIN_WINDOW
     activeWindow = MAIN_WINDOW;
+    ui->statusbar->showMessage("Select any menu");
 
     //Prepare simulation window
     simWindow = new SimulationWindow(this);
@@ -54,6 +55,8 @@ void MainWindow::on_EnterSimButton_clicked()
 
         connect(simWindow, &SimulationWindow::windowClosed, this, &MainWindow::onSimulationWindowClosed); //Connect windowClosed signal to the method
 
+        ui->statusbar->showMessage("Simulation Menu active");
+
         //Set the workspace
         if(workspace != nullptr)
         {
@@ -80,6 +83,8 @@ void MainWindow::on_EnterSimButton_clicked()
 
             ui->EnterSimButton->setText("Enter simulation menu");
             activeWindow = MAIN_WINDOW;
+
+            ui->statusbar->showMessage("Select any menu");
         }
         else
         {
@@ -134,6 +139,8 @@ void MainWindow::on_RosaButton_clicked()
 
         connect(rosaWindow, &RosaWindow::windowClosed, this, &MainWindow::onRosaWindowClosed); //Connect windowClosed signal to the method
 
+        ui->statusbar->showMessage("RoSA Menu active");
+
         //Set the workspace
         if(workspace != nullptr)
         {
@@ -164,6 +171,8 @@ void MainWindow::on_RosaButton_clicked()
 
             ui->RosaButton->setText("Enter RoSA menu");
             activeWindow = MAIN_WINDOW;
+
+            ui->statusbar->showMessage("Select any menu");
         }
         else
         {
@@ -203,6 +212,8 @@ void MainWindow::on_select_workspace_button_clicked()
     QString workspace_name = QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
     if(workspace_name == "")
     {
+        ui->statusbar->showMessage("No workspace selected", 5000);
+
         return;
     }
     simWindow->SimulationWindow::SetWorkspace(workspace_name);

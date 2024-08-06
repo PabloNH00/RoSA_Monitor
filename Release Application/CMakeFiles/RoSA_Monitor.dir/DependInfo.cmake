@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/main.cpp" "CMakeFiles/RoSA_Monitor.dir/main.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/main.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/mainwindow.cpp" "CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.cpp" "CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.o.d"
+  "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.cpp" "CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.cpp" "CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/simulationwindow.cpp" "CMakeFiles/RoSA_Monitor.dir/simulationwindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/simulationwindow.cpp.o.d"
   )

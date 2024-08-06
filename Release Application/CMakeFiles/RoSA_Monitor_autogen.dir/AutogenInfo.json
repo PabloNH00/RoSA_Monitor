@@ -159,6 +159,12 @@
 			null
 		],
 		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.h",
+			"MU",
+			"EWIEGA46WW/moc_selectrosacomponents.cpp",
+			null
+		],
+		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_shelloutputwindow.cpp",
@@ -241,6 +247,11 @@
 		],
 		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.cpp",
 			"MU",
 			null
 		],

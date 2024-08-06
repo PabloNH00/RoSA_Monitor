@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.o"
   "CMakeFiles/RoSA_Monitor.dir/rosawindow.cpp.o.d"
+  "CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o"
+  "CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o"
   "CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/simulationwindow.cpp.o"

@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
         launchermanager.cpp
         Launcher.cpp
         shelloutputwindow.cpp
+        selectrosacomponents.cpp
 
         mainwindow.h
         rosawindow.h
@@ -29,11 +30,13 @@ set(PROJECT_SOURCES
         launchermanager.h
         Launcher.h
         shelloutputwindow.h
+        selectrosacomponents.h
 
         mainwindow.ui
         simulationwindow.ui
         rosawindow.ui
         shelloutputwindow.ui
+        selectrosacomponents.ui
 
         resources.qrc
 )

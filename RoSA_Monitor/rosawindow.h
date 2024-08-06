@@ -9,6 +9,7 @@
 
 #include "launchermanager.h"
 #include "shelloutputwindow.h"
+#include "selectrosacomponents.h"
 
 namespace Ui {
 class RosaWindow;
@@ -58,6 +59,8 @@ private slots:
     void on_navigationButton_clicked();
 
     void on_esp32Button_clicked();
+
+    void on_rosaButton_clicked();
 
 signals:
     //Emitted when window closes

@@ -103,12 +103,13 @@ void SimulationWindow::on_SlamButton_clicked()
             //If this process is executing do not duplicate
             if (manager.GetLauncher(LauncherManager::SLAM_SIM)->GetLauncherProcess() != nullptr)
             {
-                qDebug() << "Process already executing.";
+                ui->statusbar->showMessage("Process SLAM already executing", 5000);
                 return;
             }
             //Create new process
             if(!manager.CreateLauncher(LauncherManager::SLAM_SIM, new QProcess(this)))
             {
+                ui->statusbar->showMessage("Launch failed", 5000);
                 return;
             }
             else
@@ -121,6 +122,8 @@ void SimulationWindow::on_SlamButton_clicked()
                 manager.Launch(LauncherManager::SLAM_SIM);
                 ui->SlamButton->setChecked(true);
                 ui->SlamButton->setText("Stop SLAM");
+
+                ui->statusbar->showMessage("Launching SLAM", 5000);
 
                 //Add new tab
                 ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::SLAM_SIM], "SLAM shell");
@@ -135,6 +138,8 @@ void SimulationWindow::on_SlamButton_clicked()
         ui->SlamButton->setText("Run SLAM");
         manager.StopLauncher(LauncherManager::SLAM_SIM);
         ui->SlamButton->setChecked(false);
+
+        ui->statusbar->showMessage("Stopping SLAM", 5000);
 
         //Delete tab
         shellWindows[LauncherManager::SLAM_SIM] = nullptr;
@@ -200,6 +205,9 @@ void SimulationWindow::on_navigationButton_clicked()
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("Can not open navigation while mapping"));
         ui->navigationButton->setChecked(false);
+
+        ui->statusbar->showMessage("Close SLAM before launch navigation", 5000);
+
         return;
     }
     if(!manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetActive())
@@ -214,7 +222,7 @@ void SimulationWindow::on_navigationButton_clicked()
             //If this process is executing do not duplicate
             if (manager.GetLauncher(LauncherManager::NAVIGATION_SIM)->GetLauncherProcess() != nullptr)
             {
-                qDebug() << "Process already executing.";
+                ui->statusbar->showMessage("Process Navigation already executing", 5000);
                 return;
             }
 
@@ -228,6 +236,7 @@ void SimulationWindow::on_navigationButton_clicked()
                 //If no map selected cancel launch
                 if(map_name.isEmpty())
                 {
+                    ui->statusbar->showMessage("No map selected, launch aborted", 5000);
                     ui->navigationButton->setChecked(false);
                     return;
                 }
@@ -241,6 +250,7 @@ void SimulationWindow::on_navigationButton_clicked()
             //Create new process
             if(!manager.CreateLauncher(LauncherManager::NAVIGATION_SIM, new QProcess(this)))
             {
+                ui->statusbar->showMessage("Launch failed", 5000);
                 return;
             }
             else
@@ -253,6 +263,8 @@ void SimulationWindow::on_navigationButton_clicked()
                 manager.Launch(LauncherManager::NAVIGATION_SIM);
                 ui->navigationButton->setChecked(true);
                 ui->navigationButton->setText("Stop Navigation");
+
+                ui->statusbar->showMessage("Launching Navigation", 5000);
 
                 //Add new tab
                 ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NAVIGATION_SIM], "Navigation shell");
@@ -267,6 +279,8 @@ void SimulationWindow::on_navigationButton_clicked()
         ui->navigationButton->setText("Run Navigation");
         manager.StopLauncher(LauncherManager::NAVIGATION_SIM);
         ui->navigationButton->setChecked(false);
+
+        ui->statusbar->showMessage("Stopping Navigation", 5000);
 
         //Delete tab
         shellWindows[LauncherManager::NAVIGATION_SIM] = nullptr;
@@ -284,6 +298,7 @@ void SimulationWindow::on_selectMapButton_clicked()
 
     if(map_name.isEmpty())
     {
+        ui->statusbar->showMessage("No map selected", 5000);
         return;
     }
     else
@@ -306,9 +321,13 @@ void SimulationWindow::on_viewFramesButton_clicked()
     {
         QMessageBox::information(this, tr("RoSA Info"), tr("You have to select a ROS2 workspace first"));
         QString workspace_name = "";
-        while(workspace_name =="")
+
+        workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+
+        if(workspace_name == "")
         {
-            workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+            ui->statusbar->showMessage("No workspace selected", 5000);
+            return;
         }
         SetWorkspace(workspace_name);
 
@@ -328,6 +347,8 @@ void SimulationWindow::on_viewFramesButton_clicked()
     QString dirName= QFileDialog::getExistingDirectory(this, "Select directory to save transform tree", QDir::homePath(), QFileDialog::ShowDirsOnly);
     if(dirName == "")
     {
+        ui->statusbar->showMessage("No valid directory", 5000);
+
         return;
     }
     else
@@ -405,6 +426,7 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
         if(workspace_name == "")
         {
+            ui->statusbar->showMessage("No workspace selected", 5000);
             return false;
         }
         SetWorkspace(workspace_name);
@@ -417,6 +439,7 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         if (!mapsExist)
         {
             manager.GetWorkspacePath()->mkpath(mapsDirPath);
+            ui->statusbar->showMessage("Maps folder created", 5000);
         }
     }
     if(!manager.GetLauncher(type)->GetActive())
@@ -424,13 +447,14 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         //If this process is executing do not duplicate
         if (manager.GetLauncher(type)->GetLauncherProcess() != nullptr)
         {
-            qDebug() << "Process already executing.";
+            ui->statusbar->showMessage("Process " + name + " already executing", 5000);
             return false;
         }
 
         //Create new process
         if(!manager.CreateLauncher(type, new QProcess(this)))
         {
+            ui->statusbar->showMessage("Launch failed", 5000);
             return false;
         }
         else
@@ -448,6 +472,8 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
             ui->tabsimulationWidget->addTab(shellWindows[type], name + " shell");
             tab_Index[type] = numOfTabs++;
 
+            ui->statusbar->showMessage("Launching " + name, 5000);
+
             return true;
         }
     }
@@ -456,6 +482,8 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         button->setText("Run " + name);
         manager.StopLauncher(type);
         button->setChecked(false);
+
+        ui->statusbar->showMessage("Stopping " + name, 5000);
 
         //Delete tab
         shellWindows[type] = nullptr;
@@ -470,10 +498,13 @@ void SimulationWindow::QuestionRvizClose(QPushButton *buttonClicked)
     if(manager.GetLauncher(LauncherManager::RVIZZ2)->GetActive()){
         int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("This button opens a custom Rvizz2\nDo you want to close the openned one?"),
                                               QMessageBox::Yes | QMessageBox::No);
-        if(disclaimer == QMessageBox::Yes){
+        if(disclaimer == QMessageBox::Yes)
+        {
             manager.StopLauncher(LauncherManager::RVIZZ2);
             buttonClicked->setChecked(false);
             ui->RvizzButton->setText("Run Rvizz2");
+
+            ui->statusbar->showMessage("Closing Rviz", 5000);
 
             //Delete tab
             shellWindows[LauncherManager::RVIZZ2] = nullptr;
@@ -489,6 +520,7 @@ bool SimulationWindow::FirstLaunchGazebo(QPushButton* buttonClicked)
         int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start gazebo\nLaunch Gazebo?"));
         if(disclaimer == QMessageBox::No)
         {
+            ui->statusbar->showMessage("Launch aborted", 5000);
             buttonClicked->setChecked(false);
             return false;
         }

@@ -3,6 +3,7 @@
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/Launcher.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/launchermanager.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.h \
+  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/simulationwindow.h \
   /usr/include/asm-generic/errno-base.h \
@@ -343,10 +344,14 @@
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDialog \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
