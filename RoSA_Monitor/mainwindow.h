@@ -40,7 +40,7 @@ private slots:
     //Called when simulation window is closed
     void onSimulationWindowClosed();
 
-    //Called when RoSA window is closed
+    //Called when ROSA window is closed
     void onRosaWindowClosed();
 
     void on_RosaButton_clicked();

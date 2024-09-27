@@ -4,6 +4,10 @@
 #include <QWidget>
 #include <QProcess>
 
+/*************************************************
+ *WINDOW TO BE SHOWED WITH LAUNCHER'S SHELL INFO *
+ * **********************************************/
+
 namespace Ui {
 class ShellOutputWindow;
 }
@@ -23,7 +27,8 @@ public slots:
 private:
     Ui::ShellOutputWindow *ui;
 
-    QProcess* process;
+    //Process whose output is read
+    QProcess* launcherProcess;
 };
 
 #endif // SHELLOUTPUTWINDOW_H

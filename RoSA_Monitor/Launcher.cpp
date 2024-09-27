@@ -38,15 +38,15 @@ void Launcher::setParentPID(qint64 pid)
     parentPID = pid;
 }
 
+void Launcher::SetActive(bool state)
+{
+    active = state;
+}
+
 void Launcher::LoadParameters(QProcess* process, QString cmd)
 {
     launcherProcess = process;
     command = cmd;
-}
-
-void Launcher::SetActive(bool state)
-{
-    active = state;
 }
 
 void Launcher::resetLauncher()

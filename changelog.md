@@ -124,3 +124,11 @@ During integration test
 ### Modified
 - Debug and execution info now showed on status bar down the monitor screen
 - GUI distribution layout for RoSA Components tab
+
+## [Versión 0.1.9] 
+
+### Added
+- First documentation
+
+### Fixed
+- Minor fixes

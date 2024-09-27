@@ -97,8 +97,8 @@ void MainWindow::on_EnterSimButton_clicked()
 
         break;
     case ROSA_WINDOW:
-        //Show alert suggesting to close RoSA menu first
-        QMessageBox::information(this, tr("RoSA Info"), tr("You can't enter simulation menu while RoSA is active\nClose RoSA menu first"));
+        //Show alert suggesting to close ROSA menu first
+        QMessageBox::information(this, tr("ROSA Info"), tr("You can't enter simulation menu while ROSA is active\nClose ROSA menu first"));
         ui->EnterSimButton->setChecked(false);
 
         break;
@@ -113,6 +113,7 @@ void MainWindow::onSimulationWindowClosed()
     //Once simulation window is closed set checked to false and update actual window and workspace
     ui->EnterSimButton->setChecked(false);
     ui->EnterSimButton->setText("Enter simulation menu");
+    ui->statusbar->showMessage("Select any menu");
     activeWindow = MAIN_WINDOW;
 
     //Save workspace if selected on simulation window
@@ -130,7 +131,7 @@ void MainWindow::onSimulationWindowClosed()
 
 void MainWindow::on_RosaButton_clicked()
 {
-    //State machine for RoSA mode button pressed
+    //State machine for ROSA mode button pressed
     switch(activeWindow)
     {
     case MAIN_WINDOW:
@@ -139,7 +140,7 @@ void MainWindow::on_RosaButton_clicked()
 
         connect(rosaWindow, &RosaWindow::windowClosed, this, &MainWindow::onRosaWindowClosed); //Connect windowClosed signal to the method
 
-        ui->statusbar->showMessage("RoSA Menu active");
+        ui->statusbar->showMessage("ROSA Menu active");
 
         //Set the workspace
         if(workspace != nullptr)
@@ -148,12 +149,12 @@ void MainWindow::on_RosaButton_clicked()
         }
 
         rosaWindow->show();
-        ui->RosaButton->setText("Exit RoSA menu");
+        ui->RosaButton->setText("Exit ROSA menu");
 
         break;
         break;
     case SIMULATION_WINDOW:
-        QMessageBox::information(this, tr("RoSA Info"), tr("You can't enter RoSA menu while simulating\nClose simulation menu first"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("You can't enter ROSA menu while simulating\nClose simulation menu first"));
         ui->RosaButton->setChecked(false);
         break;
     case ROSA_WINDOW:
@@ -169,7 +170,7 @@ void MainWindow::on_RosaButton_clicked()
 
             ui->RosaButton->setChecked(false);
 
-            ui->RosaButton->setText("Enter RoSA menu");
+            ui->RosaButton->setText("Enter ROSA menu");
             activeWindow = MAIN_WINDOW;
 
             ui->statusbar->showMessage("Select any menu");
@@ -192,7 +193,8 @@ void MainWindow::onRosaWindowClosed()
 {
     //Once simulation window is closed set checked to false and update actual window and workspace
     ui->RosaButton->setChecked(false);
-    ui->RosaButton->setText("Enter RoSA menu");
+    ui->RosaButton->setText("Enter ROSA menu");
+    ui->statusbar->showMessage("Select any menu");
     activeWindow = MAIN_WINDOW;
 
     //Save workspace if selected on simulation window
@@ -240,7 +242,7 @@ void MainWindow::on_previousMenuButton_clicked()
     switch(activeWindow)
     {
     case MAIN_WINDOW:
-        QMessageBox::information(this, tr("RoSA Info"), tr("Any menu selected"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("Any menu selected"));
         break;
     case SIMULATION_WINDOW:
         if(simWindow->isHidden())

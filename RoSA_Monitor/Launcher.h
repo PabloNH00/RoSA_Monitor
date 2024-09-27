@@ -25,9 +25,9 @@ public:
     bool GetActive();
 
     void setParentPID(qint64 pid);
-
-    void LoadParameters(QProcess* process, QString cmd);
     void SetActive(bool state);
+
+    void LoadParameters(QProcess* process, QString cmd);    
     void resetLauncher();
 };
 

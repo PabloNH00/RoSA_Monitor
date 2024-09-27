@@ -337,7 +337,7 @@ public:
     {
         RosaWindow->setWindowTitle(QCoreApplication::translate("RosaWindow", "MainWindow", nullptr));
         mainMenuButton->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));
-        rosaButton->setText(QCoreApplication::translate("RosaWindow", "Launch RoSA", nullptr));
+        rosaButton->setText(QCoreApplication::translate("RosaWindow", "Launch ROSA", nullptr));
         firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Firmware", nullptr));
         URDFButton->setText(QCoreApplication::translate("RosaWindow", "Run URDF", nullptr));
         lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run Hokuyo LiDAR", nullptr));

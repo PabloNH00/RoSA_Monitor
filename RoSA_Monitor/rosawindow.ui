@@ -54,7 +54,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>Launch RoSA</string>
+               <string>Launch ROSA</string>
               </property>
               <property name="checkable">
                <bool>false</bool>

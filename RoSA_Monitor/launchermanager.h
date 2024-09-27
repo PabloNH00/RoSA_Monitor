@@ -14,7 +14,8 @@ class LauncherManager{
 public:
 
     //List of all launchers in monitor
-    typedef enum{
+    typedef enum
+    {
         RVIZZ2,
         RQT,
         RQT_GRAPH,
@@ -35,6 +36,7 @@ public:
 private:
     //Array to store all launchers
     Launcher* List_of_Launcher[NUMBER_OF_LAUNCHERS];
+
     QDir* workspace_dir;
     QFile* mapLoaded;
 

@@ -35,7 +35,7 @@ void RosaWindow::closeEvent(QCloseEvent *event)
     //If any process is running ask user if stop them
     if(manager.IsAnyActive())
     {
-        int disclaimer = QMessageBox::warning(this, tr("RoSA Shutdown"), tr("Are you sure you want to close?\nIt will shutdown all active processes"),
+        int disclaimer = QMessageBox::warning(this, tr("ROSA Shutdown"), tr("Are you sure you want to close?\nIt will shutdown all active processes"),
                                               QMessageBox::Yes | QMessageBox::No);
 
         //stop all processes
@@ -82,7 +82,7 @@ void RosaWindow::on_rosaButton_clicked()
        manager.GetLauncher(LauncherManager::LIDAR)->GetActive()    ||
        manager.GetLauncher(LauncherManager::URDF)->GetActive())
     {
-        QMessageBox::information(this, tr("RoSA Info"), tr("For a clean launch first stop components running or use below buttons to activate individual components"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("For a clean launch first stop components running or use below buttons to activate individual components"));
         ui->statusbar->showMessage("First stop all components", 5000);
         return;
     }
@@ -128,7 +128,7 @@ void RosaWindow::on_firmwareButton_clicked()
     }
     else
     {
-        qDebug()<<"Error executing RoSA firmware  ";
+        qDebug()<<"Error executing ROSA firmware  ";
         ui->firmwareButton->setChecked(false);
 
     }
@@ -143,7 +143,7 @@ void RosaWindow::on_URDFButton_clicked()
     }
     else
     {
-        qDebug()<<"Error executing RoSA URDF  ";
+        qDebug()<<"Error executing ROSA URDF  ";
         ui->URDFButton->setChecked(false);
 
     }
@@ -157,7 +157,7 @@ void RosaWindow::on_lidarButton_clicked()
     }
     else
     {
-        qDebug()<<"Error executing RoSA LiDAR  ";
+        qDebug()<<"Error executing ROSA LiDAR  ";
         ui->lidarButton->setChecked(false);
 
     }
@@ -229,7 +229,7 @@ void RosaWindow::on_navigationButton_clicked()
     //Check if SLAM is active
     if(manager.GetLauncher(LauncherManager::SLAM)->GetActive())
     {
-        QMessageBox::information(this, tr("RoSA Info"), tr("Can not open navigation while mapping"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("Can not open navigation while mapping"));
         ui->navigationButton->setChecked(false);
 
         ui->statusbar->showMessage("Close SLAM before launch navigation", 5000);
@@ -256,7 +256,7 @@ void RosaWindow::on_navigationButton_clicked()
             if(manager.GetMap()==nullptr)
             {
                 QString map_name = "";
-                QMessageBox::information(this, tr("RoSA Info"), tr("Select your .yaml map"));
+                QMessageBox::information(this, tr("ROSA Info"), tr("Select your .yaml map"));
                 map_name= QFileDialog::getOpenFileName(this, "Select your map", manager.GetWorkspacePath()->path() + "/maps", tr("maps (*.yaml)"));
 
                 //If no map selected cancel launch
@@ -371,7 +371,7 @@ void RosaWindow::on_viewFramesButton_clicked()
     //Set workspace first
     if(manager.GetWorkspacePath()==nullptr)
     {
-        QMessageBox::information(this, tr("RoSA Info"), tr("You have to select a ROS2 workspace first"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("You have to select a ROS2 workspace first"));
         QString workspace_name = "";
 
         workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
@@ -395,7 +395,7 @@ void RosaWindow::on_viewFramesButton_clicked()
     }
 
     //Select directory to save files
-    QMessageBox::information(this, tr("RoSA Info"), tr("Select directory to save transform tree"));
+    QMessageBox::information(this, tr("ROSA Info"), tr("Select directory to save transform tree"));
     QString dirName= QFileDialog::getExistingDirectory(this, "Select directory to save transform tree", QDir::homePath(), QFileDialog::ShowDirsOnly);
     if(dirName == "")
     {
@@ -516,7 +516,7 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
     //Ask user for a workspace if not selected yet
     if(manager.GetWorkspacePath()==nullptr)
     {
-        QMessageBox::information(this, tr("RoSA Info"), tr("You have to select a ROS2 workspace first"));
+        QMessageBox::information(this, tr("ROSA Info"), tr("You have to select a ROS2 workspace first"));
         QString workspace_name = "";
 
         workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
@@ -592,7 +592,7 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
 void RosaWindow::QuestionRvizClose(QPushButton *buttonClicked)
 {
     if(manager.GetLauncher(LauncherManager::RVIZZ2)->GetActive()){
-        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("This button opens a custom Rvizz2\nDo you want to close the openned one?"),
+        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("This button opens a custom Rvizz2\nDo you want to close the openned one?"),
                                               QMessageBox::Yes | QMessageBox::No);
         if(disclaimer == QMessageBox::Yes){
             manager.StopLauncher(LauncherManager::RVIZZ2);
@@ -614,7 +614,7 @@ bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
        !manager.GetLauncher(LauncherManager::LIDAR)->GetActive()    ||
        !manager.GetLauncher(LauncherManager::URDF)->GetActive())
     {
-        int disclaimer = QMessageBox::question(this, tr("RoSA Question"), tr("First you need to start RoSA Firmware, URDF and LiDAR\nLaunch RoSA?"));
+        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("First you need to start ROSA Firmware, URDF and LiDAR\nLaunch ROSA?"));
         if(disclaimer == QMessageBox::No)
         {
             buttonClicked->setChecked(false);

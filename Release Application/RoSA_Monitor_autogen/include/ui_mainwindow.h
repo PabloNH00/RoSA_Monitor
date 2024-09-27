@@ -180,12 +180,12 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Selected workspace:</span></p></body></html>", nullptr));
         workspace_selected->setText(QCoreApplication::translate("MainWindow", "No workspace selected", nullptr));
-        select_workspace_button->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        select_workspace_button->setText(QCoreApplication::translate("MainWindow", "Select workspace", nullptr));
         previousMenuButton->setText(QCoreApplication::translate("MainWindow", "Previous menu", nullptr));
-        RosaButton->setText(QCoreApplication::translate("MainWindow", "Start RoSA Menu", nullptr));
+        RosaButton->setText(QCoreApplication::translate("MainWindow", "Start ROSA Menu", nullptr));
         EnterSimButton->setText(QCoreApplication::translate("MainWindow", "Enter Simulation Mode", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "                                                                                                     RoSa Monitor", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "                                                                                                       Version 0.1.8", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "                                                                                                     ROSA Monitor", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "                                                                                                       Version 0.1.9", nullptr));
         imgUPM->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         imgETSIDI->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi

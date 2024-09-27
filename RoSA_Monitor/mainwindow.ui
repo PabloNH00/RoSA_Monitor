@@ -41,7 +41,7 @@
      <item>
       <widget class="QPushButton" name="select_workspace_button">
        <property name="text">
-        <string>PushButton</string>
+        <string>Select workspace</string>
        </property>
       </widget>
      </item>
@@ -100,7 +100,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Start RoSA Menu</string>
+            <string>Start ROSA Menu</string>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -136,7 +136,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>                                                                                                     RoSa Monitor</string>
+            <string>                                                                                                     ROSA Monitor</string>
            </property>
           </widget>
          </item>
@@ -149,7 +149,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>                                                                                                       Version 0.1.8</string>
+            <string>                                                                                                       Version 0.1.9</string>
            </property>
           </widget>
          </item>

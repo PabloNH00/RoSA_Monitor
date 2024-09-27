@@ -15,6 +15,7 @@ SelectRosaComponents::~SelectRosaComponents()
 
 void SelectRosaComponents::on_okButton_clicked()
 {
+    //Close dialog
     accept();
 }
 
