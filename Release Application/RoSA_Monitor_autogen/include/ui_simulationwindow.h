@@ -45,6 +45,7 @@ public:
     QPushButton *rqtButton;
     QPushButton *viewFramesButton;
     QPushButton *TeleopButton;
+    QPushButton *nodeListButton;
     QFrame *line_3;
     QLabel *label_2;
     QLabel *mapLabel;
@@ -61,7 +62,7 @@ public:
     {
         if (SimulationWindow->objectName().isEmpty())
             SimulationWindow->setObjectName(QString::fromUtf8("SimulationWindow"));
-        SimulationWindow->resize(844, 579);
+        SimulationWindow->resize(982, 598);
         centralwidget = new QWidget(SimulationWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -149,6 +150,14 @@ public:
         TeleopButton->setCheckable(true);
 
         verticalLayout->addWidget(TeleopButton);
+
+        nodeListButton = new QPushButton(tab_IndeximMenu);
+        nodeListButton->setObjectName(QString::fromUtf8("nodeListButton"));
+        sizePolicy2.setHeightForWidth(nodeListButton->sizePolicy().hasHeightForWidth());
+        nodeListButton->setSizePolicy(sizePolicy2);
+        nodeListButton->setCheckable(false);
+
+        verticalLayout->addWidget(nodeListButton);
 
 
         verticalLayout_3->addLayout(verticalLayout);
@@ -238,7 +247,7 @@ public:
         SimulationWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SimulationWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 844, 22));
+        menubar->setGeometry(QRect(0, 0, 982, 22));
         SimulationWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(SimulationWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -262,6 +271,7 @@ public:
         rqtButton->setText(QCoreApplication::translate("SimulationWindow", "Run rqt", nullptr));
         viewFramesButton->setText(QCoreApplication::translate("SimulationWindow", "Print transform tree", nullptr));
         TeleopButton->setText(QCoreApplication::translate("SimulationWindow", "Run Teleop_Twist", nullptr));
+        nodeListButton->setText(QCoreApplication::translate("SimulationWindow", "ROS2 node list", nullptr));
         label_2->setText(QCoreApplication::translate("SimulationWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Selected map for navigation:</span></p></body></html>", nullptr));
         mapLabel->setText(QCoreApplication::translate("SimulationWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">No map selected</span></p></body></html>", nullptr));
         selectMapButton->setText(QCoreApplication::translate("SimulationWindow", "Select map", nullptr));

@@ -409,6 +409,71 @@ void SimulationWindow::on_TeleopButton_clicked()
     }
 }
 
+void SimulationWindow::on_nodeListButton_clicked()
+{
+    //Ask user for a workspace if not selected yet
+    if(manager.GetWorkspacePath()==nullptr)
+    {
+        QMessageBox::information(this, tr("ROSA Info"), tr("You have to select a ROS2 workspace first"));
+        QString workspace_name = "";
+
+        workspace_name= QFileDialog::getExistingDirectory(this, "Select your workspace", QDir::homePath(), QFileDialog::ShowDirsOnly);
+        if(workspace_name == "")
+        {
+            ui->statusbar->showMessage("No workspace selected", 5000);
+            return;
+        }
+        SetWorkspace(workspace_name);
+
+        //Verify if /maps exists
+        QString mapsDirPath = manager.GetWorkspacePath()->filePath("maps");
+        bool mapsExist = manager.GetWorkspacePath()->exists("maps");
+
+        //If not, create /maps in workspace
+        if (!mapsExist)
+        {
+            manager.GetWorkspacePath()->mkpath(mapsDirPath);
+            ui->statusbar->showMessage("Maps folder created", 5000);
+        }
+    }
+    if(manager.GetLauncher(LauncherManager::NODE_LIST)->GetActive())
+    {
+        manager.StopLauncher(LauncherManager::NODE_LIST);
+    }
+    //Create new process
+    if(!manager.CreateLauncher(LauncherManager::NODE_LIST, new QProcess(this)))
+    {
+        ui->statusbar->showMessage("Launch failed", 5000);
+        return;
+    }
+    else
+    {
+            //if first time launched create new tab
+        if(shellWindows[LauncherManager::NODE_LIST] == nullptr)
+        {
+            //Create shell window and connect shell output of process launcher to the read output slot
+            shellWindows[LauncherManager::NODE_LIST] = new ShellOutputWindow(this, manager.GetLauncher(LauncherManager::NODE_LIST)->GetLauncherProcess());
+            //Add new tab
+            ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NODE_LIST], "ROS2 node list");
+            tab_Index[LauncherManager::NODE_LIST] = numOfTabs++;
+
+            ui->nodeListButton->setText("Update ROS2 node list");
+        }
+        //if not first time clear tab and associates the new process
+        else
+        {
+            shellWindows[LauncherManager::NODE_LIST]->ClearText();
+            shellWindows[LauncherManager::NODE_LIST]->setLauncherProcess(manager.GetLauncher(LauncherManager::NODE_LIST)->GetLauncherProcess());
+        }
+        connect(manager.GetLauncher(LauncherManager::NODE_LIST)->GetLauncherProcess(), &QProcess::readyReadStandardOutput, shellWindows[LauncherManager::NODE_LIST], &ShellOutputWindow::readProcessOutput);
+
+        //Launch process
+        manager.Launch(LauncherManager::NODE_LIST);
+
+        ui->statusbar->showMessage("Launching node list", 5000);
+    }
+}
+
 
 
 /****************************************************
@@ -549,4 +614,5 @@ void SimulationWindow::RemoveTab(LauncherManager::LauncherType type)
 
     tab_Index[type] = 0;
 }
+
 

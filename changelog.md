@@ -132,3 +132,12 @@ During integration test
 
 ### Fixed
 - Minor fixes
+
+## [Versión 0.1.10] 
+
+### Added
+- NODE_LIST button (only in simulation menu by the moment) that execute "ROS2 node list" and update the output every time is pressed
+- Functions in shelloutputwindow to associate new process to a window and to clear the output
+
+### Modified
+- LauncherManager commands according to rosa_description/launch modifications

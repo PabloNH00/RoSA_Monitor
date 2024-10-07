@@ -20,6 +20,10 @@ public:
     explicit ShellOutputWindow(QWidget *parent = nullptr, QProcess* process = nullptr);
     ~ShellOutputWindow();
 
+    void setLauncherProcess(QProcess* process);
+
+    void ClearText();
+
 public slots:
     //Slot for reading std output of process
     void readProcessOutput();

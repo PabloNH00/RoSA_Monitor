@@ -98,6 +98,10 @@ void LauncherManager::StopLauncher(LauncherType type){
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
                           "ros2 run teleop_twist_qt teleop_twist_qt";
              break;
+         case NODE_LIST:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
+                          "ros2 node list";
+             break;
          case ESP32:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
                           "ros2 run rosa_firmware rosa_qt_esp32";
@@ -116,13 +120,13 @@ void LauncherManager::StopLauncher(LauncherType type){
              break;
          case SLAM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
-                          "ros2 launch rosa_description amcl_launch.py use_sim_time:=false slam:=True "
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=false slam:=True "
                           "slam_params:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/mapper_params_online_async.yaml "
                           "params_file:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/nav2_params.yaml";
              break;
          case NAVIGATION:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
-                          "ros2 launch rosa_description amcl_launch.py use_sim_time:=false map:=" + mapLoaded->fileName();
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=false map:=" + mapLoaded->fileName();
              break;
          case GAZEBO_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
@@ -130,13 +134,13 @@ void LauncherManager::StopLauncher(LauncherType type){
              break;
          case SLAM_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
-                          "ros2 launch rosa_description amcl_launch.py use_sim_time:=true slam:=True "
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true slam:=True "
                           "slam_params:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/mapper_params_online_async.yaml "
                           "params_file:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/nav2_params.yaml";
              break;
          case NAVIGATION_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
-                          "ros2 launch rosa_description amcl_launch.py use_sim_time:=true map:=" + mapLoaded->fileName();
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true map:=" + mapLoaded->fileName();
              break;
          default:
              qDebug()<<"Incorrect type, launcher can not be created";

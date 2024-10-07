@@ -21,6 +21,7 @@ public:
         RQT_GRAPH,
         VIEW_FRAMES,
         TELEOP,
+        NODE_LIST,
         ESP32,
         FIRMWARE,
         URDF,

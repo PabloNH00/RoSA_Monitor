@@ -54,6 +54,8 @@ private slots:
 
     void on_TeleopButton_clicked();
 
+    void on_nodeListButton_clicked();
+
 signals:
     //Emitted when window closes
     void windowClosed();

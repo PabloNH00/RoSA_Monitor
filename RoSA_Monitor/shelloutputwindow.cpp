@@ -13,6 +13,18 @@ ShellOutputWindow::~ShellOutputWindow()
     delete ui;
 }
 
+void ShellOutputWindow::setLauncherProcess(QProcess *process)
+{
+    if(process != nullptr)
+    {
+        launcherProcess = process;
+    }
+}
+
+void ShellOutputWindow::ClearText()
+{
+    ui->shellTextOutput->clear();
+}
 
 void ShellOutputWindow::readProcessOutput()
 {
