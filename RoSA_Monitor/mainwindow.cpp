@@ -284,4 +284,3 @@ void MainWindow::closeEvent(QCloseEvent *event)
         event->accept();  //Close window
     }
 }
-

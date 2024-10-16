@@ -163,7 +163,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Launch Camera (TO DO)</string>
+            <string>Launch Camera</string>
            </property>
           </widget>
          </item>

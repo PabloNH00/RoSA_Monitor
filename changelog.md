@@ -141,3 +141,12 @@ During integration test
 
 ### Modified
 - LauncherManager commands according to rosa_description/launch modifications
+
+## [Versión 0.1.11] 
+
+### Added
+- Camera launcher for ROSA components
+- NODE_LIST button for ROSA Menu
+
+### Modified
+- Launchers command to adapt for new repository (rosa_robot) rutes 

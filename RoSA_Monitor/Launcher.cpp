@@ -55,4 +55,3 @@ void Launcher::resetLauncher()
     parentPID = 0;
     command = "";
 }
-

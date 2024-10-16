@@ -26,6 +26,7 @@ public:
         FIRMWARE,
         URDF,
         LIDAR,
+        CAMERA,
         SLAM,
         NAVIGATION,
         GAZEBO_SIM,

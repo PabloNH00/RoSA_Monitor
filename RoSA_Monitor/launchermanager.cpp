@@ -118,11 +118,15 @@ void LauncherManager::StopLauncher(LauncherType type){
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
                           "ros2 launch urg_node2 urg_node2.launch.py";
              break;
+         case CAMERA:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
+                          "ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true";
+             break;
          case SLAM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
                           "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=false slam:=True "
-                          "slam_params:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/mapper_params_online_async.yaml "
-                          "params_file:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/nav2_params.yaml";
+                          "slam_params:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/mapper_params_online_async.yaml "
+                          "params_file:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/nav2_params.yaml";
              break;
          case NAVIGATION:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
@@ -135,8 +139,8 @@ void LauncherManager::StopLauncher(LauncherType type){
          case SLAM_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
                           "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true slam:=True "
-                          "slam_params:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/mapper_params_online_async.yaml "
-                          "params_file:=" + workspace_dir->path() + "/src/rosa_description_Pablo/config/nav2_params.yaml";
+                          "slam_params:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/mapper_params_online_async.yaml "
+                          "params_file:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/nav2_params.yaml";
              break;
          case NAVIGATION_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "

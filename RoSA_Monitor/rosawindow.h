@@ -62,6 +62,10 @@ private slots:
 
     void on_rosaButton_clicked();
 
+    void on_nodeListButton_clicked();
+
+    void on_cameraButton_clicked();
+
 signals:
     //Emitted when window closes
     void windowClosed();

@@ -57,6 +57,7 @@ public:
     QPushButton *viewFramesButton;
     QPushButton *TeleopButton;
     QPushButton *esp32Button;
+    QPushButton *nodeListButton;
     QFrame *line_3;
     QLabel *label_2;
     QLabel *mapLabel;
@@ -140,6 +141,7 @@ public:
         sizePolicy1.setHeightForWidth(cameraButton->sizePolicy().hasHeightForWidth());
         cameraButton->setSizePolicy(sizePolicy1);
         cameraButton->setContextMenuPolicy(Qt::NoContextMenu);
+        cameraButton->setCheckable(true);
 
         horizontalLayout->addWidget(cameraButton);
 
@@ -238,6 +240,13 @@ public:
         esp32Button->setCheckable(true);
 
         verticalLayout->addWidget(esp32Button);
+
+        nodeListButton = new QPushButton(tabDebugTools);
+        nodeListButton->setObjectName(QString::fromUtf8("nodeListButton"));
+        sizePolicy1.setHeightForWidth(nodeListButton->sizePolicy().hasHeightForWidth());
+        nodeListButton->setSizePolicy(sizePolicy1);
+
+        verticalLayout->addWidget(nodeListButton);
 
 
         verticalLayout_3->addLayout(verticalLayout);
@@ -341,7 +350,7 @@ public:
         firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Firmware", nullptr));
         URDFButton->setText(QCoreApplication::translate("RosaWindow", "Run URDF", nullptr));
         lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run Hokuyo LiDAR", nullptr));
-        cameraButton->setText(QCoreApplication::translate("RosaWindow", "Run camera (TODO)", nullptr));
+        cameraButton->setText(QCoreApplication::translate("RosaWindow", "Run camera", nullptr));
         tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabRosaMenu), QCoreApplication::translate("RosaWindow", "RoSA Components", nullptr));
         mainMenuButton_2->setText(QCoreApplication::translate("RosaWindow", "Main menu", nullptr));
         label->setText(QCoreApplication::translate("RosaWindow", "Debug Tools:", nullptr));
@@ -351,6 +360,7 @@ public:
         viewFramesButton->setText(QCoreApplication::translate("RosaWindow", "Print transform tree", nullptr));
         TeleopButton->setText(QCoreApplication::translate("RosaWindow", "Run Teleop_Twist", nullptr));
         esp32Button->setText(QCoreApplication::translate("RosaWindow", "Run ESP32 monitor", nullptr));
+        nodeListButton->setText(QCoreApplication::translate("RosaWindow", "ROS2 node list", nullptr));
         label_2->setText(QCoreApplication::translate("RosaWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Selected map for navigation:</span></p></body></html>", nullptr));
         mapLabel->setText(QCoreApplication::translate("RosaWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">No map selected</span></p></body></html>", nullptr));
         selectMapButton->setText(QCoreApplication::translate("RosaWindow", "Select map", nullptr));

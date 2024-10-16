@@ -123,7 +123,10 @@
                  <enum>Qt::NoContextMenu</enum>
                 </property>
                 <property name="text">
-                 <string>Run camera (TODO)</string>
+                 <string>Run camera</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -271,6 +274,19 @@
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="nodeListButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>ROS2 node list</string>
                   </property>
                  </widget>
                 </item>

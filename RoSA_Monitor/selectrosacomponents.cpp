@@ -46,4 +46,3 @@ void SelectRosaComponents::on_launchAllCheckbox_stateChanged(int arg1)
         ui->cameraCheckbox->setChecked(false);
     }
 }
-

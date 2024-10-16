@@ -614,5 +614,3 @@ void SimulationWindow::RemoveTab(LauncherManager::LauncherType type)
 
     tab_Index[type] = 0;
 }
-
-

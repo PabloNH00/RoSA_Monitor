@@ -152,7 +152,7 @@ public:
         firmwareCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Firmware", nullptr));
         urdfCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch URDF", nullptr));
         lidarCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch LiDAR", nullptr));
-        cameraCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Camera (TO DO)", nullptr));
+        cameraCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Camera", nullptr));
         okButton->setText(QCoreApplication::translate("SelectRosaComponents", "Launch selected", nullptr));
     } // retranslateUi
 
