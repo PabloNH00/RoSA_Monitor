@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Select Components</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -52,7 +52,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Launch Firmware</string>
+            <string>Launch Odom from Firmware </string>
            </property>
            <property name="iconSize">
             <size>

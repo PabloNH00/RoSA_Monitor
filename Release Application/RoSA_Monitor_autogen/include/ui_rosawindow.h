@@ -344,15 +344,15 @@ public:
 
     void retranslateUi(QMainWindow *RosaWindow)
     {
-        RosaWindow->setWindowTitle(QCoreApplication::translate("RosaWindow", "MainWindow", nullptr));
+        RosaWindow->setWindowTitle(QCoreApplication::translate("RosaWindow", "ROSA Menu", nullptr));
         mainMenuButton->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));
         rosaButton->setText(QCoreApplication::translate("RosaWindow", "Launch ROSA", nullptr));
-        firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Firmware", nullptr));
+        firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Odom from Firmware", nullptr));
         URDFButton->setText(QCoreApplication::translate("RosaWindow", "Run URDF", nullptr));
         lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run Hokuyo LiDAR", nullptr));
         cameraButton->setText(QCoreApplication::translate("RosaWindow", "Run camera", nullptr));
-        tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabRosaMenu), QCoreApplication::translate("RosaWindow", "RoSA Components", nullptr));
-        mainMenuButton_2->setText(QCoreApplication::translate("RosaWindow", "Main menu", nullptr));
+        tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabRosaMenu), QCoreApplication::translate("RosaWindow", "ROSA Components", nullptr));
+        mainMenuButton_2->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));
         label->setText(QCoreApplication::translate("RosaWindow", "Debug Tools:", nullptr));
         RvizzButton->setText(QCoreApplication::translate("RosaWindow", "Run Rviz2", nullptr));
         graphButton->setText(QCoreApplication::translate("RosaWindow", "Run rqt_graph", nullptr));
@@ -366,7 +366,7 @@ public:
         selectMapButton->setText(QCoreApplication::translate("RosaWindow", "Select map", nullptr));
         SlamButton->setText(QCoreApplication::translate("RosaWindow", "Run SLAM", nullptr));
         navigationButton->setText(QCoreApplication::translate("RosaWindow", "Run Navigation", nullptr));
-        tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabDebugTools), QCoreApplication::translate("RosaWindow", "RoSA Menu", nullptr));
+        tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabDebugTools), QCoreApplication::translate("RosaWindow", "ROSA Menu", nullptr));
     } // retranslateUi
 
 };

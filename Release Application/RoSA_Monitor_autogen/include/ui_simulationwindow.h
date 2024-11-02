@@ -263,8 +263,8 @@ public:
 
     void retranslateUi(QMainWindow *SimulationWindow)
     {
-        SimulationWindow->setWindowTitle(QCoreApplication::translate("SimulationWindow", "MainWindow", nullptr));
-        mainMenuButton->setText(QCoreApplication::translate("SimulationWindow", "Main menu", nullptr));
+        SimulationWindow->setWindowTitle(QCoreApplication::translate("SimulationWindow", "Simulation Menu", nullptr));
+        mainMenuButton->setText(QCoreApplication::translate("SimulationWindow", "Main Menu", nullptr));
         label->setText(QCoreApplication::translate("SimulationWindow", "Debug Tools:", nullptr));
         RvizzButton->setText(QCoreApplication::translate("SimulationWindow", "Run Rviz2", nullptr));
         graphButton->setText(QCoreApplication::translate("SimulationWindow", "Run rqt_graph", nullptr));

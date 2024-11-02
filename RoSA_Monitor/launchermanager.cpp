@@ -30,7 +30,7 @@ void LauncherManager::StopLauncher(LauncherType type){
     //Bash command to kill all process in the process tree of the parent PIF
     QString str = "pstree -p " + QString::number(this->List_of_Launcher[type]->GetParentPID()) + "  | awk -F'[()]' '{for(i=2;i<=NF;i+=2) print $i}' | sort -n | uniq | xargs kill -TERM";
 
-    if(type == RQT_GRAPH || type == RQT)
+    if(type == RQT_GRAPH || type == RQT || type == DEMO)
     {
         str = "pstree -p " + QString::number(this->List_of_Launcher[type]->GetParentPID()) + "  | awk -F'[()]' '{for(i=2;i<=NF;i+=2) print $i}' | sort -n | uniq | xargs kill -9";
     }
@@ -124,9 +124,7 @@ void LauncherManager::StopLauncher(LauncherType type){
              break;
          case SLAM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
-                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=false slam:=True "
-                          "slam_params:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/mapper_params_online_async.yaml "
-                          "params_file:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/nav2_params.yaml";
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=false slam:=True ";
              break;
          case NAVIGATION:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
@@ -138,13 +136,15 @@ void LauncherManager::StopLauncher(LauncherType type){
              break;
          case SLAM_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "
-                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true slam:=True "
-                          "slam_params:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/mapper_params_online_async.yaml "
-                          "params_file:=" + workspace_dir->path() + "/src/rosa_robot/rosa_description/config/nav2_params.yaml";
+                          "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true slam:=True ";
              break;
          case NAVIGATION_SIM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
                           "ros2 launch rosa_description rosa_nav_slam_launch.py use_sim_time:=true map:=" + mapLoaded->fileName();
+             break;
+         case DEMO:
+             auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
+                          "ros2 launch voice_transcriber_pkg rosa_voice.launch.py";
              break;
          default:
              qDebug()<<"Incorrect type, launcher can not be created";

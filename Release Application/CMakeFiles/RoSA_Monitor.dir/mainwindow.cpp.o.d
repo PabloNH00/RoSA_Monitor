@@ -320,6 +320,7 @@ CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+ /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.h \
  /home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/include/ui_mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \

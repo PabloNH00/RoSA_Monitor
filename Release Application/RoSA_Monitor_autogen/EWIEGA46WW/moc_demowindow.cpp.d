@@ -1,12 +1,8 @@
-/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/mainwindow.h \
+/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/EWIEGA46WW/moc_demowindow.cpp: /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.h \
   /home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/moc_predefs.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/Launcher.h \
-  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/launchermanager.h \
-  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/rosawindow.h \
-  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.h \
   /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/shelloutputwindow.h \
-  /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/simulationwindow.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
@@ -319,7 +315,6 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent \
-  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
@@ -345,14 +340,10 @@
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDialog \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \

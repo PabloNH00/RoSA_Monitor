@@ -32,6 +32,7 @@ public:
         GAZEBO_SIM,
         SLAM_SIM,
         NAVIGATION_SIM,
+        DEMO,
         NUMBER_OF_LAUNCHERS
     } LauncherType ;
 

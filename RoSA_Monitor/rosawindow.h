@@ -70,6 +70,9 @@ signals:
     //Emitted when window closes
     void windowClosed();
 
+    //Emitted to update workspace in main menu
+    void showMainWindow();
+
 protected:
     /*******************
     *EXTERNAL FUNCTIONS*
@@ -90,6 +93,9 @@ protected:
 
     //Delete a shell tab and reorganize index
     void RemoveTab(LauncherManager::LauncherType type);
+
+    // Each time a launcher is executed or closed
+    void UpdateNodeList();
 
 private:
     Ui::RosaWindow *ui;

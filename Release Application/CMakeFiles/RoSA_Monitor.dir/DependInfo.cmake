@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/Launcher.cpp" "CMakeFiles/RoSA_Monitor.dir/Launcher.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/Launcher.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/mocs_compilation.cpp" "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/mocs_compilation.cpp.o.d"
+  "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp" "CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/launchermanager.cpp" "CMakeFiles/RoSA_Monitor.dir/launchermanager.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/launchermanager.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/main.cpp" "CMakeFiles/RoSA_Monitor.dir/main.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/main.cpp.o.d"
   "/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/mainwindow.cpp" "CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/RoSA_Monitor.dir/mainwindow.cpp.o.d"

@@ -214,6 +214,30 @@ RoSA_Monitor_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/mocs_compilation.cpp.s
 .PHONY : RoSA_Monitor_autogen/mocs_compilation.cpp.s
 
+demowindow.o: demowindow.cpp.o
+.PHONY : demowindow.o
+
+# target to build an object file
+demowindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o
+.PHONY : demowindow.cpp.o
+
+demowindow.i: demowindow.cpp.i
+.PHONY : demowindow.i
+
+# target to preprocess a source file
+demowindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.i
+.PHONY : demowindow.cpp.i
+
+demowindow.s: demowindow.cpp.s
+.PHONY : demowindow.s
+
+# target to generate assembly for a file
+demowindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RoSA_Monitor.dir/build.make CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.s
+.PHONY : demowindow.cpp.s
+
 launchermanager.o: launchermanager.cpp.o
 .PHONY : launchermanager.o
 
@@ -401,6 +425,9 @@ help:
 	@echo "... RoSA_Monitor_autogen/mocs_compilation.o"
 	@echo "... RoSA_Monitor_autogen/mocs_compilation.i"
 	@echo "... RoSA_Monitor_autogen/mocs_compilation.s"
+	@echo "... demowindow.o"
+	@echo "... demowindow.i"
+	@echo "... demowindow.s"
 	@echo "... launchermanager.o"
 	@echo "... launchermanager.i"
 	@echo "... launchermanager.s"

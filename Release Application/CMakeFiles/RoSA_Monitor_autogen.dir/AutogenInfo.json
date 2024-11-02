@@ -141,6 +141,12 @@
 			null
 		],
 		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.h",
+			"MU",
+			"EWIEGA46WW/moc_demowindow.cpp",
+			null
+		],
+		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/launchermanager.h",
 			"MU",
 			"EWIEGA46WW/moc_launchermanager.cpp",
@@ -231,6 +237,11 @@
 	[
 		[
 			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/Launcher.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp",
 			"MU",
 			null
 		],

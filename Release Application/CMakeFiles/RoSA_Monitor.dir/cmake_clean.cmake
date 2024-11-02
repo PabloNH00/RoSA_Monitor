@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o"
+  "CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/launchermanager.cpp.o"
   "CMakeFiles/RoSA_Monitor.dir/launchermanager.cpp.o.d"
   "CMakeFiles/RoSA_Monitor.dir/main.cpp.o"

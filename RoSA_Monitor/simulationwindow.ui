@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Simulation Menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -43,7 +43,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Main menu</string>
+                 <string>Main Menu</string>
                 </property>
                </widget>
               </item>

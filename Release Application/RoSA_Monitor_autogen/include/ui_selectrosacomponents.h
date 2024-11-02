@@ -147,9 +147,9 @@ public:
 
     void retranslateUi(QDialog *SelectRosaComponents)
     {
-        SelectRosaComponents->setWindowTitle(QCoreApplication::translate("SelectRosaComponents", "Dialog", nullptr));
+        SelectRosaComponents->setWindowTitle(QCoreApplication::translate("SelectRosaComponents", "Select Components", nullptr));
         launchAllCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch all", nullptr));
-        firmwareCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Firmware", nullptr));
+        firmwareCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Odom from Firmware ", nullptr));
         urdfCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch URDF", nullptr));
         lidarCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch LiDAR", nullptr));
         cameraCheckbox->setText(QCoreApplication::translate("SelectRosaComponents", "Launch Camera", nullptr));

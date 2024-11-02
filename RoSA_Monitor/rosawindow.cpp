@@ -116,19 +116,22 @@ void RosaWindow::on_rosaButton_clicked()
                }
            }
        }
+
+       UpdateNodeList();
+
     }
 }
 
 
 void RosaWindow::on_firmwareButton_clicked()
 {
-    if(ButtonPressed(ui->firmwareButton, LauncherManager::FIRMWARE, "Firmware"))
+    if(ButtonPressed(ui->firmwareButton, LauncherManager::FIRMWARE, "Odom from Firmware"))
     {
-        qDebug()<<"Firmware correctly executed";
+        qDebug()<<"Odom from Firmware correctly executed";
     }
     else
     {
-        qDebug()<<"Error executing ROSA firmware  ";
+        qDebug()<<"Error executing Odom from Firmware";
         ui->firmwareButton->setChecked(false);
 
     }
@@ -220,6 +223,8 @@ void RosaWindow::on_SlamButton_clicked()
             }
         }
 
+        UpdateNodeList();
+
     }
     //Stop the process due to a second press on button
     else
@@ -233,6 +238,8 @@ void RosaWindow::on_SlamButton_clicked()
         //Delete tab
         shellWindows[LauncherManager::SLAM] = nullptr;
         RemoveTab(LauncherManager::SLAM);
+
+        UpdateNodeList();
     }
 }
 
@@ -311,6 +318,8 @@ void RosaWindow::on_navigationButton_clicked()
                 ui->tabRoSAWidget->addTab(shellWindows[LauncherManager::NAVIGATION], "Navigation shell");
                 tab_Index[LauncherManager::NAVIGATION] = numOfTabs++;
             }
+
+            UpdateNodeList();
         }
 
     }
@@ -326,6 +335,8 @@ void RosaWindow::on_navigationButton_clicked()
         //Delete tab
         shellWindows[LauncherManager::NAVIGATION] = nullptr;
         RemoveTab(LauncherManager::NAVIGATION);
+
+        UpdateNodeList();
     }
 }
 
@@ -510,6 +521,9 @@ void RosaWindow::on_selectMapButton_clicked()
 
 void RosaWindow::on_mainMenuButton_clicked()
 {
+    // Emit signal to main window to update workspace
+    emit showMainWindow();
+
     //Hide the window to show main menu
     this->hide();
 }
@@ -648,6 +662,9 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
             //Add new tab
             ui->tabRoSAWidget->addTab(shellWindows[type], name + " shell");
             tab_Index[type] = numOfTabs++;
+
+            UpdateNodeList();
+
             return true;
         }
     }
@@ -662,6 +679,8 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
         //Delete tab
         shellWindows[type] = nullptr;
         RemoveTab(type);
+
+        UpdateNodeList();
 
         return true;
     }
@@ -693,7 +712,7 @@ bool RosaWindow::FirstLaunchFirmware(QPushButton* buttonClicked)
        !manager.GetLauncher(LauncherManager::LIDAR)->GetActive()    ||
        !manager.GetLauncher(LauncherManager::URDF)->GetActive())
     {
-        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("First you need to start ROSA Firmware, URDF and LiDAR\nLaunch ROSA?"));
+        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("First you need to start Odom from Firmware, URDF and LiDAR\nLaunch ROSA?"));
         if(disclaimer == QMessageBox::No)
         {
             buttonClicked->setChecked(false);
@@ -735,4 +754,12 @@ void RosaWindow::RemoveTab(LauncherManager::LauncherType type)
     }
 
     tab_Index[type] = 0;
+}
+
+void RosaWindow::UpdateNodeList()
+{
+    if(manager.GetLauncher(LauncherManager::NODE_LIST)->GetActive())
+    {
+        on_nodeListButton_clicked();
+    }
 }

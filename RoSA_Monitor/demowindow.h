@@ -1,5 +1,5 @@
-#ifndef SIMULATIONWINDOW_H
-#define SIMULATIONWINDOW_H
+#ifndef DEMOWINDOW_H
+#define DEMOWINDOW_H
 
 #include <QMainWindow>
 
@@ -11,18 +11,18 @@
 #include "shelloutputwindow.h"
 
 namespace Ui {
-class SimulationWindow;
+class DemoWindow;
 }
 
-class SimulationWindow : public QMainWindow
+class DemoWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     bool running;
 
-    explicit SimulationWindow(QWidget *parent = nullptr);
-    ~SimulationWindow();
+    explicit DemoWindow(QWidget *parent = nullptr);
+    ~DemoWindow();
 
     /*******************
     *EXTERNAL FUNCTIONS*
@@ -34,27 +34,13 @@ private slots:
     /*******************
     *SLOT FUNCTIONS*
     *******************/
-    void on_GazeboButton_clicked();
-
-    void on_SlamButton_clicked();
-
-    void on_RvizzButton_clicked();
-
     void on_graphButton_clicked();
-
-    void on_rqtButton_clicked();
 
     void on_mainMenuButton_clicked();
 
-    void on_navigationButton_clicked();
-
-    void on_selectMapButton_clicked();
-
-    void on_viewFramesButton_clicked();
-
-    void on_TeleopButton_clicked();
-
     void on_nodeListButton_clicked();
+
+    void on_DemoButton_clicked();
 
 signals:
     //Emitted when window closes
@@ -75,12 +61,6 @@ protected:
     //Refactored process of pressing a button
     bool ButtonPressed(QPushButton* button, LauncherManager::LauncherType type, QString name);
 
-    //Ask for launch Gazebo if another launcher is selected before and launches it
-    bool FirstLaunchGazebo(QPushButton* buttonClicked);
-
-    //Ask if close Rviz bc launcher already open a predefined Rviz
-    void QuestionRvizClose(QPushButton* buttonClicked);
-
     //Set buttons state to off when window is closed
     void shutDownWindow();
 
@@ -91,7 +71,7 @@ protected:
     void UpdateNodeList();
 
 private:
-    Ui::SimulationWindow *ui;
+    Ui::DemoWindow *ui;
 
     LauncherManager manager;
 
@@ -102,8 +82,6 @@ private:
 
     //Array of shellWindows objects for independent tabs
     ShellOutputWindow* shellWindows[LauncherManager::NUMBER_OF_LAUNCHERS];
-
-
 };
 
-#endif // SIMULATIONWINDOW_H
+#endif // DEMOWINDOW_H

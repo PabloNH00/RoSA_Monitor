@@ -148,5 +148,20 @@ During integration test
 - Camera launcher for ROSA components
 - NODE_LIST button for ROSA Menu
 
+## [Versión 1.0.0] 02-11-2024
+First completed version
+  
+### Added
+- Demo Window to run STT-TTS demo
+- Node list updated every time a launcher is executed or closed
+  
 ### Modified
-- Launchers command to adapt for new repository (rosa_robot) rutes 
+- Full screen windows
+- Main window layout to resize images
+
+### Fixed
+- Workspace selection updates between menus
+  - Directly from main menu to others
+  - Trough a signal from others to main menu (to avoid specific menus to have a reference to main menu)
+- SLAM launcher
+- Minor details

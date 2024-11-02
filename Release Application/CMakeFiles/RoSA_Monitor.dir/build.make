@@ -203,10 +203,24 @@ CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/selectrosacomponents.cpp -o CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.s
 
+CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o: CMakeFiles/RoSA_Monitor.dir/flags.make
+CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o: /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp
+CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o: CMakeFiles/RoSA_Monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o -MF CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o.d -o CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o -c /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp
+
+CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp > CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.i
+
+CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pablonh-ubuntu/RoSA_monitor/RoSA_Monitor/demowindow.cpp -o CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.s
+
 CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/RoSA_Monitor.dir/flags.make
 CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o: RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/RoSA_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -228,6 +242,7 @@ RoSA_Monitor_OBJECTS = \
 "CMakeFiles/RoSA_Monitor.dir/Launcher.cpp.o" \
 "CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o" \
 "CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o" \
+"CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o" \
 "CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target RoSA_Monitor
@@ -242,13 +257,14 @@ RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/launchermanager.cpp.o
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/Launcher.cpp.o
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/shelloutputwindow.cpp.o
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/selectrosacomponents.cpp.o
+RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/demowindow.cpp.o
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/RoSA_Monitor_autogen/EWIEGA46WW/qrc_resources.cpp.o
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/build.make
 RoSA_Monitor: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3
 RoSA_Monitor: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3
 RoSA_Monitor: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
 RoSA_Monitor: CMakeFiles/RoSA_Monitor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable RoSA_Monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pablonh-ubuntu/RoSA_monitor/build-RoSA_Monitor-Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable RoSA_Monitor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RoSA_Monitor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

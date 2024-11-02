@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ROSA Menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -22,7 +22,7 @@
       </property>
       <widget class="QWidget" name="tabRosaMenu">
        <attribute name="title">
-        <string>RoSA Components</string>
+        <string>ROSA Components</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
@@ -72,7 +72,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Run Firmware</string>
+                 <string>Run Odom from Firmware</string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -140,7 +140,7 @@
       </widget>
       <widget class="QWidget" name="tabDebugTools">
        <attribute name="title">
-        <string>RoSA Menu</string>
+        <string>ROSA Menu</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
@@ -158,7 +158,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Main menu</string>
+                 <string>Main Menu</string>
                 </property>
                </widget>
               </item>

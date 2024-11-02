@@ -128,6 +128,8 @@ void SimulationWindow::on_SlamButton_clicked()
                 //Add new tab
                 ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::SLAM_SIM], "SLAM shell");
                 tab_Index[LauncherManager::SLAM_SIM] = numOfTabs++;
+
+                UpdateNodeList();
             }
         }
 
@@ -144,6 +146,8 @@ void SimulationWindow::on_SlamButton_clicked()
         //Delete tab
         shellWindows[LauncherManager::SLAM_SIM] = nullptr;
         RemoveTab(LauncherManager::SLAM_SIM);
+
+        UpdateNodeList();
     }
 }
 
@@ -193,6 +197,9 @@ void SimulationWindow::on_rqtButton_clicked()
 
 void SimulationWindow::on_mainMenuButton_clicked()
 {
+    // Emit signal to main window to update workspace
+    emit showMainWindow();
+
     //Hide the window to show main menu
     this->hide();
 }
@@ -269,6 +276,8 @@ void SimulationWindow::on_navigationButton_clicked()
                 //Add new tab
                 ui->tabsimulationWidget->addTab(shellWindows[LauncherManager::NAVIGATION_SIM], "Navigation shell");
                 tab_Index[LauncherManager::NAVIGATION_SIM] = numOfTabs++;
+
+                UpdateNodeList();
             }
         }
 
@@ -285,6 +294,8 @@ void SimulationWindow::on_navigationButton_clicked()
         //Delete tab
         shellWindows[LauncherManager::NAVIGATION_SIM] = nullptr;
         RemoveTab(LauncherManager::NAVIGATION_SIM);
+
+        UpdateNodeList();
     }
 }
 
@@ -539,6 +550,8 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
 
             ui->statusbar->showMessage("Launching " + name, 5000);
 
+            UpdateNodeList();
+
             return true;
         }
     }
@@ -553,6 +566,8 @@ bool SimulationWindow::ButtonPressed(QPushButton* button, LauncherManager::Launc
         //Delete tab
         shellWindows[type] = nullptr;
         RemoveTab(type);
+
+        UpdateNodeList();
 
         return true;
     }
@@ -613,4 +628,13 @@ void SimulationWindow::RemoveTab(LauncherManager::LauncherType type)
     }
 
     tab_Index[type] = 0;
+}
+
+void SimulationWindow::UpdateNodeList()
+{
+    //Update node list
+    if(manager.GetLauncher(LauncherManager::NODE_LIST)->GetActive())
+    {
+        on_nodeListButton_clicked();
+    }
 }
