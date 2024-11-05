@@ -22,6 +22,17 @@ MainWindow::MainWindow(QWidget *parent)
     rosaWindow = new RosaWindow(this);
     demoWindow = new DemoWindow(this);
 
+    //Verify if /maps exists
+    QDir* homeDir = new QDir(QDir::homePath());
+    bool rosa_ws = homeDir->exists("rosa_ws");
+
+    //If not, create /maps in workspace
+    if (rosa_ws)
+    {
+        homeDir->cd("rosa_ws");
+        workspace = homeDir;
+        ui->workspace_selected->setText(homeDir->dirName());
+    }
 }
 
 MainWindow::~MainWindow()
@@ -38,7 +49,9 @@ MainWindow::~MainWindow()
     {
          delete demoWindow;
     }
+
     delete workspace;
+
     delete ui;
 }
 

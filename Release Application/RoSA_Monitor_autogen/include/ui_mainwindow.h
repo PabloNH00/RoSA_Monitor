@@ -243,7 +243,7 @@ public:
         EnterSimButton->setText(QCoreApplication::translate("MainWindow", "Enter Simulation Menu", nullptr));
         DemoButton->setText(QCoreApplication::translate("MainWindow", "Enter Demo Speak", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "ROSA Monitor", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Version 1.0.0", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Version 1.0.1", nullptr));
     } // retranslateUi
 
 };

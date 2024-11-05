@@ -21,7 +21,7 @@ This three windows share some functionalities and structures such as:
 
 ![Main window](Images/MainWindow.png)
 
-This is the first and main window in the monitor. It is composed by three big buttons, that allow the user to enter in the more specific menus explained below. In the top-left area of the window it is located the workspace configuration, where user can select his ROSA workspace where ROSA packages are located. 
+This is the first and main window in the monitor. It is composed by three big buttons, that allow the user to enter in the more specific menus explained below. In the top-left area of the window it is located the workspace configuration, where user can select his ROSA workspace where ROSA packages are located. If a folder called "rosa_ws" exists in the user's home directory it is set by default as the ROSA directory.
 
 If a valid folder is selected as workspace, the text will change to the name of the folder, also the monitor will scan it looking for a "/maps" directory as the default route for saving the SLAM maps. If no "/maps" folder is found it wil be automatically created. When launching navigation, the map selection will open this folder if exists, either /home directory will be opened
 

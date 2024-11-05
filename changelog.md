@@ -165,3 +165,9 @@ First completed version
   - Trough a signal from others to main menu (to avoid specific menus to have a reference to main menu)
 - SLAM launcher
 - Minor details
+
+## [Versión 1.0.1] 
+  
+### Added
+- Startup verification looking for a workspace called "rosa_ws" in user's home directory to initialize workspace value
+  
