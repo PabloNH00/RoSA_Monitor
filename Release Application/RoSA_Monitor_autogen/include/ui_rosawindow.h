@@ -94,6 +94,22 @@ public:
         sizePolicy.setHeightForWidth(mainMenuButton->sizePolicy().hasHeightForWidth());
         mainMenuButton->setSizePolicy(sizePolicy);
         mainMenuButton->setContextMenuPolicy(Qt::NoContextMenu);
+        mainMenuButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout_5->addWidget(mainMenuButton);
 
@@ -106,6 +122,22 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(rosaButton->sizePolicy().hasHeightForWidth());
         rosaButton->setSizePolicy(sizePolicy1);
+        rosaButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         rosaButton->setCheckable(false);
 
         verticalLayout_4->addWidget(rosaButton);
@@ -116,6 +148,22 @@ public:
         firmwareButton->setObjectName(QString::fromUtf8("firmwareButton"));
         sizePolicy1.setHeightForWidth(firmwareButton->sizePolicy().hasHeightForWidth());
         firmwareButton->setSizePolicy(sizePolicy1);
+        firmwareButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         firmwareButton->setCheckable(true);
 
         horizontalLayout->addWidget(firmwareButton);
@@ -124,6 +172,22 @@ public:
         URDFButton->setObjectName(QString::fromUtf8("URDFButton"));
         sizePolicy1.setHeightForWidth(URDFButton->sizePolicy().hasHeightForWidth());
         URDFButton->setSizePolicy(sizePolicy1);
+        URDFButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         URDFButton->setCheckable(true);
 
         horizontalLayout->addWidget(URDFButton);
@@ -132,6 +196,22 @@ public:
         lidarButton->setObjectName(QString::fromUtf8("lidarButton"));
         sizePolicy1.setHeightForWidth(lidarButton->sizePolicy().hasHeightForWidth());
         lidarButton->setSizePolicy(sizePolicy1);
+        lidarButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         lidarButton->setCheckable(true);
 
         horizontalLayout->addWidget(lidarButton);
@@ -141,6 +221,22 @@ public:
         sizePolicy1.setHeightForWidth(cameraButton->sizePolicy().hasHeightForWidth());
         cameraButton->setSizePolicy(sizePolicy1);
         cameraButton->setContextMenuPolicy(Qt::NoContextMenu);
+        cameraButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         cameraButton->setCheckable(true);
 
         horizontalLayout->addWidget(cameraButton);
@@ -172,6 +268,22 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(mainMenuButton_2->sizePolicy().hasHeightForWidth());
         mainMenuButton_2->setSizePolicy(sizePolicy2);
+        mainMenuButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout_3->addWidget(mainMenuButton_2);
 
@@ -198,6 +310,22 @@ public:
         RvizzButton->setObjectName(QString::fromUtf8("RvizzButton"));
         sizePolicy1.setHeightForWidth(RvizzButton->sizePolicy().hasHeightForWidth());
         RvizzButton->setSizePolicy(sizePolicy1);
+        RvizzButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         RvizzButton->setCheckable(true);
 
         verticalLayout->addWidget(RvizzButton);
@@ -206,6 +334,22 @@ public:
         graphButton->setObjectName(QString::fromUtf8("graphButton"));
         sizePolicy1.setHeightForWidth(graphButton->sizePolicy().hasHeightForWidth());
         graphButton->setSizePolicy(sizePolicy1);
+        graphButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         graphButton->setCheckable(true);
 
         verticalLayout->addWidget(graphButton);
@@ -214,6 +358,22 @@ public:
         rqtButton->setObjectName(QString::fromUtf8("rqtButton"));
         sizePolicy1.setHeightForWidth(rqtButton->sizePolicy().hasHeightForWidth());
         rqtButton->setSizePolicy(sizePolicy1);
+        rqtButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         rqtButton->setCheckable(true);
 
         verticalLayout->addWidget(rqtButton);
@@ -222,6 +382,22 @@ public:
         viewFramesButton->setObjectName(QString::fromUtf8("viewFramesButton"));
         sizePolicy1.setHeightForWidth(viewFramesButton->sizePolicy().hasHeightForWidth());
         viewFramesButton->setSizePolicy(sizePolicy1);
+        viewFramesButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout->addWidget(viewFramesButton);
 
@@ -229,6 +405,22 @@ public:
         TeleopButton->setObjectName(QString::fromUtf8("TeleopButton"));
         sizePolicy1.setHeightForWidth(TeleopButton->sizePolicy().hasHeightForWidth());
         TeleopButton->setSizePolicy(sizePolicy1);
+        TeleopButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         TeleopButton->setCheckable(true);
 
         verticalLayout->addWidget(TeleopButton);
@@ -237,6 +429,22 @@ public:
         esp32Button->setObjectName(QString::fromUtf8("esp32Button"));
         sizePolicy1.setHeightForWidth(esp32Button->sizePolicy().hasHeightForWidth());
         esp32Button->setSizePolicy(sizePolicy1);
+        esp32Button->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         esp32Button->setCheckable(true);
 
         verticalLayout->addWidget(esp32Button);
@@ -245,6 +453,22 @@ public:
         nodeListButton->setObjectName(QString::fromUtf8("nodeListButton"));
         sizePolicy1.setHeightForWidth(nodeListButton->sizePolicy().hasHeightForWidth());
         nodeListButton->setSizePolicy(sizePolicy1);
+        nodeListButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout->addWidget(nodeListButton);
 
@@ -281,6 +505,22 @@ public:
         selectMapButton = new QPushButton(tabDebugTools);
         selectMapButton->setObjectName(QString::fromUtf8("selectMapButton"));
         selectMapButton->setMaximumSize(QSize(550, 16777215));
+        selectMapButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout_2->addWidget(selectMapButton);
 
@@ -303,6 +543,22 @@ public:
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(SlamButton->sizePolicy().hasHeightForWidth());
         SlamButton->setSizePolicy(sizePolicy5);
+        SlamButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         SlamButton->setCheckable(true);
 
         verticalLayout_7->addWidget(SlamButton);
@@ -311,6 +567,22 @@ public:
         navigationButton->setObjectName(QString::fromUtf8("navigationButton"));
         sizePolicy5.setHeightForWidth(navigationButton->sizePolicy().hasHeightForWidth());
         navigationButton->setSizePolicy(sizePolicy5);
+        navigationButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         navigationButton->setCheckable(true);
 
         verticalLayout_7->addWidget(navigationButton);
@@ -347,9 +619,9 @@ public:
         RosaWindow->setWindowTitle(QCoreApplication::translate("RosaWindow", "ROSA Menu", nullptr));
         mainMenuButton->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));
         rosaButton->setText(QCoreApplication::translate("RosaWindow", "Launch ROSA", nullptr));
-        firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Odom from Firmware", nullptr));
+        firmwareButton->setText(QCoreApplication::translate("RosaWindow", "Run Odom ", nullptr));
         URDFButton->setText(QCoreApplication::translate("RosaWindow", "Run URDF", nullptr));
-        lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run Hokuyo LiDAR", nullptr));
+        lidarButton->setText(QCoreApplication::translate("RosaWindow", "Run LiDAR", nullptr));
         cameraButton->setText(QCoreApplication::translate("RosaWindow", "Run camera", nullptr));
         tabRoSAWidget->setTabText(tabRoSAWidget->indexOf(tabRosaMenu), QCoreApplication::translate("RosaWindow", "ROSA Components", nullptr));
         mainMenuButton_2->setText(QCoreApplication::translate("RosaWindow", "Main Menu", nullptr));

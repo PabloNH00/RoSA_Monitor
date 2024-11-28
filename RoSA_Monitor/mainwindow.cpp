@@ -32,7 +32,32 @@ MainWindow::MainWindow(QWidget *parent)
         homeDir->cd("rosa_ws");
         workspace = homeDir;
         ui->workspace_selected->setText(homeDir->dirName());
+        ui->select_workspace_button->setStyleSheet("QPushButton {"
+                                                       "font-family: 'Times New Roman';"
+                                                       "font-size: 18px; "
+                                                       "font-weight: bold;"
+                                                       "border: 2px solid #ccc;"
+                                                       "border-radius: 5px;"
+                                                      "padding: 10px 20px;"
+                                                       "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);"
+                                                       "color: black; "
+                                                   "}");
     }
+    else
+    {
+        ui->select_workspace_button->setStyleSheet("QPushButton {"
+                                                       "font-family: 'Times New Roman';"
+                                                       "font-size: 18px;"
+                                                       "font-weight: bold;"
+                                                       "border-color: red;"
+                                                       "background-color: lightcoral;"
+                                                       "border-radius: 5px; "
+                                                      "padding: 10px 20px; "
+                                                       "color: black; "
+                                                   "}");
+    }
+
+    ui->previousMenuButton->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -91,6 +116,8 @@ void MainWindow::on_EnterSimButton_clicked()
         simWindow->showMaximized();
         ui->EnterSimButton->setText("Exit simulation Menu");
 
+        ui->previousMenuButton->setVisible(true);
+
         break;
 
     case SIMULATION_WINDOW:
@@ -110,6 +137,8 @@ void MainWindow::on_EnterSimButton_clicked()
             activeWindow = MAIN_WINDOW;
 
             ui->statusbar->showMessage("Select any menu");
+
+            ui->previousMenuButton->setVisible(false);
         }
         else
         {
@@ -178,6 +207,8 @@ void MainWindow::on_RosaButton_clicked()
         rosaWindow->showMaximized();
         ui->RosaButton->setText("Exit ROSA Menu");
 
+        ui->previousMenuButton->setVisible(true);
+
         break;
     case DEMO_WINDOW:
     case SIMULATION_WINDOW:
@@ -201,6 +232,8 @@ void MainWindow::on_RosaButton_clicked()
             activeWindow = MAIN_WINDOW;
 
             ui->statusbar->showMessage("Select any menu");
+
+            ui->previousMenuButton->setVisible(false);
         }
         else
         {
@@ -258,6 +291,8 @@ void MainWindow::on_DemoButton_clicked()
         demoWindow->showMaximized();
         ui->DemoButton->setText("Exit Demo Speak");
 
+        ui->previousMenuButton->setVisible(true);
+
         break;
     case ROSA_WINDOW:
     case SIMULATION_WINDOW:
@@ -281,6 +316,8 @@ void MainWindow::on_DemoButton_clicked()
             activeWindow = MAIN_WINDOW;
 
             ui->statusbar->showMessage("Select any menu");
+
+            ui->previousMenuButton->setVisible(false);
         }
         else
         {
@@ -341,6 +378,16 @@ void MainWindow::on_select_workspace_button_clicked()
         workspace->mkpath(mapsDirPath);
     }
 
+    ui->select_workspace_button->setStyleSheet("QPushButton {"
+                                                   "font-family: 'Times New Roman';"
+                                                   "font-size: 18px;  /* Fuente más grande (18px) */"
+                                                   "font-weight: bold;"
+                                                   "border: 2px solid #ccc;  /* Borde gris claro */"
+                                                   "border-radius: 5px;  /* Bordes ligeramente redondeados */"
+                                                  "padding: 10px 20px;  /* Relleno alrededor del texto */"
+                                                   "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */"
+                                                   "color: black;  /* Texto negro */"
+                                               "}");
 
     //Update workspace in the active window
     switch(activeWindow)

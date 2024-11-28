@@ -77,6 +77,22 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(mainMenuButton->sizePolicy().hasHeightForWidth());
         mainMenuButton->setSizePolicy(sizePolicy);
+        mainMenuButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         verticalLayout_3->addWidget(mainMenuButton);
 
@@ -106,6 +122,22 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(graphButton->sizePolicy().hasHeightForWidth());
         graphButton->setSizePolicy(sizePolicy2);
+        graphButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         graphButton->setCheckable(true);
 
         verticalLayout->addWidget(graphButton);
@@ -114,6 +146,22 @@ public:
         nodeListButton->setObjectName(QString::fromUtf8("nodeListButton"));
         sizePolicy2.setHeightForWidth(nodeListButton->sizePolicy().hasHeightForWidth());
         nodeListButton->setSizePolicy(sizePolicy2);
+        nodeListButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         nodeListButton->setCheckable(false);
 
         verticalLayout->addWidget(nodeListButton);
@@ -143,6 +191,22 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(DemoButton->sizePolicy().hasHeightForWidth());
         DemoButton->setSizePolicy(sizePolicy3);
+        DemoButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         DemoButton->setCheckable(true);
 
         verticalLayout_7->addWidget(DemoButton);

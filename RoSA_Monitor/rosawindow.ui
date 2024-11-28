@@ -38,6 +38,24 @@
             <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+            </property>
             <property name="text">
              <string>Main Menu</string>
             </property>
@@ -52,6 +70,24 @@
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
               </property>
               <property name="text">
                <string>Launch ROSA</string>
@@ -71,8 +107,26 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                </property>
                 <property name="text">
-                 <string>Run Odom from Firmware</string>
+                 <string>Run Odom </string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -86,6 +140,24 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                 </property>
                 <property name="text">
                  <string>Run URDF</string>
@@ -103,8 +175,26 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                </property>
                 <property name="text">
-                 <string>Run Hokuyo LiDAR</string>
+                 <string>Run LiDAR</string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -121,6 +211,24 @@
                 </property>
                 <property name="contextMenuPolicy">
                  <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                 </property>
                 <property name="text">
                  <string>Run camera</string>
@@ -157,6 +265,24 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                </property>
                 <property name="text">
                  <string>Main Menu</string>
                 </property>
@@ -192,6 +318,24 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                  </property>
                   <property name="text">
                    <string>Run Rviz2</string>
                   </property>
@@ -207,6 +351,24 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                   </property>
                   <property name="text">
                    <string>Run rqt_graph</string>
@@ -224,6 +386,24 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                  </property>
                   <property name="text">
                    <string>Run rqt</string>
                   </property>
@@ -240,6 +420,24 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                  </property>
                   <property name="text">
                    <string>Print transform tree</string>
                   </property>
@@ -252,6 +450,24 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                   </property>
                   <property name="text">
                    <string>Run Teleop_Twist</string>
@@ -269,6 +485,24 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                  </property>
                   <property name="text">
                    <string>Run ESP32 monitor</string>
                   </property>
@@ -284,6 +518,24 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                   </property>
                   <property name="text">
                    <string>ROS2 node list</string>
@@ -335,6 +587,24 @@
                 <height>16777215</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+              </property>
               <property name="text">
                <string>Select map</string>
               </property>
@@ -359,6 +629,24 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+              </property>
               <property name="text">
                <string>Run SLAM</string>
               </property>
@@ -374,6 +662,24 @@
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
               </property>
               <property name="text">
                <string>Run Navigation</string>

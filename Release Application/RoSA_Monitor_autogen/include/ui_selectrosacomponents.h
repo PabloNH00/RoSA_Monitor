@@ -55,6 +55,16 @@ public:
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
         launchAllCheckbox = new QCheckBox(SelectRosaComponents);
         launchAllCheckbox->setObjectName(QString::fromUtf8("launchAllCheckbox"));
+        launchAllCheckbox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    font-size: 18px;  /* Aumenta el tama\303\261o de la fuente */\n"
+"    spacing: 10px;  /* Espacio entre la casilla y el texto */\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 60px;  /* Ancho de la casilla */\n"
+"    height: 60px;  /* Alto de la casilla */\n"
+"}\n"
+""));
 
         verticalLayout_8->addWidget(launchAllCheckbox);
 
@@ -71,6 +81,16 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(firmwareCheckbox->sizePolicy().hasHeightForWidth());
         firmwareCheckbox->setSizePolicy(sizePolicy);
+        firmwareCheckbox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    font-size: 18px;  /* Aumenta el tama\303\261o de la fuente */\n"
+"    spacing: 10px;  /* Espacio entre la casilla y el texto */\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 60px;  /* Ancho de la casilla */\n"
+"    height: 60px;  /* Alto de la casilla */\n"
+"}\n"
+""));
         firmwareCheckbox->setIconSize(QSize(16, 16));
         firmwareCheckbox->setChecked(true);
         firmwareCheckbox->setTristate(false);
@@ -90,6 +110,16 @@ public:
         urdfCheckbox->setObjectName(QString::fromUtf8("urdfCheckbox"));
         sizePolicy.setHeightForWidth(urdfCheckbox->sizePolicy().hasHeightForWidth());
         urdfCheckbox->setSizePolicy(sizePolicy);
+        urdfCheckbox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    font-size: 18px;  /* Aumenta el tama\303\261o de la fuente */\n"
+"    spacing: 10px;  /* Espacio entre la casilla y el texto */\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 60px;  /* Ancho de la casilla */\n"
+"    height: 60px;  /* Alto de la casilla */\n"
+"}\n"
+""));
 
         horizontalLayout_4->addWidget(urdfCheckbox);
 
@@ -106,6 +136,16 @@ public:
         lidarCheckbox->setObjectName(QString::fromUtf8("lidarCheckbox"));
         sizePolicy.setHeightForWidth(lidarCheckbox->sizePolicy().hasHeightForWidth());
         lidarCheckbox->setSizePolicy(sizePolicy);
+        lidarCheckbox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    font-size: 18px;  /* Aumenta el tama\303\261o de la fuente */\n"
+"    spacing: 10px;  /* Espacio entre la casilla y el texto */\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 60px;  /* Ancho de la casilla */\n"
+"    height: 60px;  /* Alto de la casilla */\n"
+"}\n"
+""));
 
         horizontalLayout_5->addWidget(lidarCheckbox);
 
@@ -122,6 +162,16 @@ public:
         cameraCheckbox->setObjectName(QString::fromUtf8("cameraCheckbox"));
         sizePolicy.setHeightForWidth(cameraCheckbox->sizePolicy().hasHeightForWidth());
         cameraCheckbox->setSizePolicy(sizePolicy);
+        cameraCheckbox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    font-size: 18px;  /* Aumenta el tama\303\261o de la fuente */\n"
+"    spacing: 10px;  /* Espacio entre la casilla y el texto */\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 60px;  /* Ancho de la casilla */\n"
+"    height: 60px;  /* Alto de la casilla */\n"
+"}\n"
+""));
 
         horizontalLayout_6->addWidget(cameraCheckbox);
 

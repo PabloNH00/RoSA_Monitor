@@ -170,4 +170,11 @@ First completed version
   
 ### Added
 - Startup verification looking for a workspace called "rosa_ws" in user's home directory to initialize workspace value
+
+## [Versión 1.0.2] 
   
+### Modified
+- Previous menu only visible if any other menu is active
+- Visuals of the buttons 
+- Buttons's background set to green when active
+- Select workspace and select map buttons coloured red if any selected 

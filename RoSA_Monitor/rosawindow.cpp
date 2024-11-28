@@ -12,6 +12,17 @@ RosaWindow::RosaWindow(QWidget *parent) :
         tab_Index[i] = 0;
         shellWindows[i] = nullptr;
     }
+
+    ui->selectMapButton->setStyleSheet("QPushButton {"
+                                       "font-family: 'Times New Roman';"
+                                       "font-size: 18px;"
+                                       "font-weight: bold;"
+                                       "border-color: red;"
+                                       "background-color: lightcoral;"
+                                       "border-radius: 5px; "
+                                      "padding: 10px 20px; "
+                                       "color: black; "
+                                   "}");
 }
 
 RosaWindow::~RosaWindow()
@@ -125,7 +136,7 @@ void RosaWindow::on_rosaButton_clicked()
 
 void RosaWindow::on_firmwareButton_clicked()
 {
-    if(ButtonPressed(ui->firmwareButton, LauncherManager::FIRMWARE, "Odom from Firmware"))
+    if(ButtonPressed(ui->firmwareButton, LauncherManager::FIRMWARE, "Odom"))
     {
         qDebug()<<"Odom from Firmware correctly executed";
     }
@@ -154,7 +165,7 @@ void RosaWindow::on_URDFButton_clicked()
 
 void RosaWindow::on_lidarButton_clicked()
 {
-    if(ButtonPressed(ui->lidarButton, LauncherManager::LIDAR, "Hokuyo LiDAR"))
+    if(ButtonPressed(ui->lidarButton, LauncherManager::LIDAR, "LiDAR"))
     {
         qDebug()<<"LiDAR correctly executed";
     }
@@ -168,7 +179,7 @@ void RosaWindow::on_lidarButton_clicked()
 
 void RosaWindow::on_cameraButton_clicked()
 {
-    if(ButtonPressed(ui->cameraButton, LauncherManager::CAMERA, "RGBD Camera"))
+    if(ButtonPressed(ui->cameraButton, LauncherManager::CAMERA, "Camera"))
     {
         qDebug()<<"Camera correctly executed";
     }
@@ -516,6 +527,17 @@ void RosaWindow::on_selectMapButton_clicked()
         manager.SetMap(map_name);
         QFileInfo mapInfo(*manager.GetMap());
         ui->mapLabel->setText(mapInfo.fileName());
+
+        ui->selectMapButton->setStyleSheet("QPushButton {"
+                                           "font-family: 'Times New Roman';"
+                                           "font-size: 18px; "
+                                           "font-weight: bold;"
+                                           "border: 2px solid #ccc;"
+                                           "border-radius: 5px;"
+                                          "padding: 10px 20px;"
+                                           "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);"
+                                           "color: black; "
+                                       "}");
     }
 }
 

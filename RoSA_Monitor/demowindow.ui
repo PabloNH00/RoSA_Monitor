@@ -42,6 +42,24 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                </property>
                 <property name="text">
                  <string>Main menu</string>
                 </property>
@@ -77,6 +95,24 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
+                  </property>
                   <property name="text">
                    <string>Run rqt_graph</string>
                   </property>
@@ -92,6 +128,24 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
                   </property>
                   <property name="text">
                    <string>ROS2 node list</string>
@@ -123,6 +177,24 @@
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    font-family: &quot;Times New Roman&quot;;
+    font-size: 18px;  /* Fuente más grande (18px) */
+    font-weight: bold;
+    border: 2px solid #ccc;  /* Borde gris claro */
+    border-radius: 5px;  /* Bordes ligeramente redondeados */
+    padding: 10px 20px;  /* Relleno alrededor del texto */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */
+    color: black;  /* Texto negro */
+}
+
+QPushButton:checked {
+    border-color: green;  /* Borde verde cuando esté marcado */
+    background-color: lightgreen;  /* Fondo verde claro cuando esté marcado */
+}
+</string>
               </property>
               <property name="text">
                <string>Run Demo</string>

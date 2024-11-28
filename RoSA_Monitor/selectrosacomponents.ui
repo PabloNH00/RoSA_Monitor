@@ -20,6 +20,18 @@
       <layout class="QVBoxLayout" name="verticalLayout_8">
        <item>
         <widget class="QCheckBox" name="launchAllCheckbox">
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    spacing: 10px;  /* Espacio entre la casilla y el texto */
+}
+
+QCheckBox::indicator {
+    width: 60px;  /* Ancho de la casilla */
+    height: 60px;  /* Alto de la casilla */
+}
+</string>
+         </property>
          <property name="text">
           <string>Launch all</string>
          </property>
@@ -50,6 +62,18 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox {
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    spacing: 10px;  /* Espacio entre la casilla y el texto */
+}
+
+QCheckBox::indicator {
+    width: 60px;  /* Ancho de la casilla */
+    height: 60px;  /* Alto de la casilla */
+}
+</string>
            </property>
            <property name="text">
             <string>Launch Odom from Firmware </string>
@@ -96,6 +120,18 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox {
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    spacing: 10px;  /* Espacio entre la casilla y el texto */
+}
+
+QCheckBox::indicator {
+    width: 60px;  /* Ancho de la casilla */
+    height: 60px;  /* Alto de la casilla */
+}
+</string>
+           </property>
            <property name="text">
             <string>Launch URDF</string>
            </property>
@@ -129,6 +165,18 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox {
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    spacing: 10px;  /* Espacio entre la casilla y el texto */
+}
+
+QCheckBox::indicator {
+    width: 60px;  /* Ancho de la casilla */
+    height: 60px;  /* Alto de la casilla */
+}
+</string>
+           </property>
            <property name="text">
             <string>Launch LiDAR</string>
            </property>
@@ -161,6 +209,18 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox {
+    font-size: 18px;  /* Aumenta el tamaño de la fuente */
+    spacing: 10px;  /* Espacio entre la casilla y el texto */
+}
+
+QCheckBox::indicator {
+    width: 60px;  /* Ancho de la casilla */
+    height: 60px;  /* Alto de la casilla */
+}
+</string>
            </property>
            <property name="text">
             <string>Launch Camera</string>

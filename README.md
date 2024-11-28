@@ -8,6 +8,7 @@ This monitor is intended to run by a ROSA developper, and it is made to mostly a
 
 This three windows share some functionalities and structures such as:
  - The "Main menu" button minimize the window to navigate to the Main menu. 
+ - The "Previous menu" button on Main Menu only appears when any other menu is active.
  - Every process is launched in a hidden shell whose output is printed in a new tab in the menu. 
  - Tabs with the processes output will close if the process is stoped from the monitor
  - All the launcher buttons are checked buttons, which means that if a process is running and his button is pressed, the process will be stopped. 
@@ -21,11 +22,11 @@ This three windows share some functionalities and structures such as:
 
 ![Main window](Images/MainWindow.png)
 
-This is the first and main window in the monitor. It is composed by three big buttons, that allow the user to enter in the more specific menus explained below. In the top-left area of the window it is located the workspace configuration, where user can select his ROSA workspace where ROSA packages are located. If a folder called "rosa_ws" exists in the user's home directory it is set by default as the ROSA directory.
+This is the first and main window in the monitor. It is composed by three big buttons, that allow the user to enter in the more specific menus explained below. In the top-left area of the window it is located the workspace configuration, where user can select his ROSA workspace where ROSA packages are located. If a folder called "rosa_ws" exists in the user's home directory it is set by default as the ROSA directory. If no workspace is selected this button appears in red.
 
 If a valid folder is selected as workspace, the text will change to the name of the folder, also the monitor will scan it looking for a "/maps" directory as the default route for saving the SLAM maps. If no "/maps" folder is found it wil be automatically created. When launching navigation, the map selection will open this folder if exists, either /home directory will be opened
 
-The top-right button allow user to return to the open menu if either of them is opened. Down-right this window is indicated the currently version (you can chek the changelog to notice the modifications). Down left the window you can find a status bar showing info about the currently active menu.
+If any other menu is active, the top-right button allow user to return to the open menu if either of them is opened. Down-right this window is indicated the currently version (you can chek the changelog to notice the modifications). Down left the window you can find a status bar showing info about the currently active menu.
 
 The monitor will not allow the user to enter a second menu neither close main window while any other menu is opened.
 
@@ -44,7 +45,7 @@ This tab is made to launch the required ROSA's components. It shows the ROS2 int
 
 Tis tab is made to develop with ROSA. The main functionalities of ROSA (SLAM and navigation) have buttons on the right part of the tab, while the ROS2 and ROSA debug tools buttons are implemented in the left part. 
 
-This tab also have a "Select map" area similar to the "Select workspace" area in the Main window. It is used to configure the navigation launcher and if it is pressed it will open the "/maps" directory by default. If no map is selected when Navigation is launched the monitor wil ask the user to select one ".yaml" file before execute it.
+This tab also have a "Select map" area similar to the "Select workspace" area in the Main window. It is used to configure the navigation launcher and if it is pressed it will open the "/maps" directory by default. If no map is selected when Navigation is launched the monitor wil ask the user to select one ".yaml" file before execute it. This button appears coloured in red if no map is selected.
 
 To launch SLAM or Navigation a /scan topic and a joint between odom and base_footprint must be active, so if user tries to run any of this launchers before that, the application will ask for launch Odometry, URDF and LiDAR. 
 Both SLAM and Navigation buttons open a preconfigured RVIZ, as explained in the rosa_description package of the ROSA workspace, so when the user presses one of these buttons with the RVIZ from debug tools opened, the monitor will warn and ask the user if he wants to close the first RVIZ.

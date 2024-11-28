@@ -95,6 +95,16 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(select_workspace_button->sizePolicy().hasHeightForWidth());
         select_workspace_button->setSizePolicy(sizePolicy2);
+        select_workspace_button->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}"));
 
         verticalLayout_3->addWidget(select_workspace_button, 0, Qt::AlignHCenter);
 
@@ -144,6 +154,22 @@ public:
         sizePolicy4.setHeightForWidth(previousMenuButton->sizePolicy().hasHeightForWidth());
         previousMenuButton->setSizePolicy(sizePolicy4);
         previousMenuButton->setContextMenuPolicy(Qt::NoContextMenu);
+        previousMenuButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
 
         horizontalLayout_2->addWidget(previousMenuButton, 0, Qt::AlignRight);
 
@@ -165,6 +191,22 @@ public:
         sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(RosaButton->sizePolicy().hasHeightForWidth());
         RosaButton->setSizePolicy(sizePolicy5);
+        RosaButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         RosaButton->setCheckable(true);
 
         verticalLayout->addWidget(RosaButton);
@@ -174,6 +216,22 @@ public:
         sizePolicy5.setHeightForWidth(EnterSimButton->sizePolicy().hasHeightForWidth());
         EnterSimButton->setSizePolicy(sizePolicy5);
         EnterSimButton->setAutoFillBackground(false);
+        EnterSimButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         EnterSimButton->setCheckable(true);
 
         verticalLayout->addWidget(EnterSimButton);
@@ -182,6 +240,22 @@ public:
         DemoButton->setObjectName(QString::fromUtf8("DemoButton"));
         sizePolicy5.setHeightForWidth(DemoButton->sizePolicy().hasHeightForWidth());
         DemoButton->setSizePolicy(sizePolicy5);
+        DemoButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    font-family: \"Times New Roman\";\n"
+"    font-size: 18px;  /* Fuente m\303\241s grande (18px) */\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #ccc;  /* Borde gris claro */\n"
+"    border-radius: 5px;  /* Bordes ligeramente redondeados */\n"
+"    padding: 10px 20px;  /* Relleno alrededor del texto */\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);  /* Degradado de blanco a gris claro */\n"
+"    color: black;  /* Texto negro */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-color: green;  /* Borde verde cuando est\303\251 marcado */\n"
+"    background-color: lightgreen;  /* Fondo verde claro cuando est\303\251 marcado */\n"
+"}\n"
+""));
         DemoButton->setCheckable(true);
 
         verticalLayout->addWidget(DemoButton);
@@ -243,7 +317,7 @@ public:
         EnterSimButton->setText(QCoreApplication::translate("MainWindow", "Enter Simulation Menu", nullptr));
         DemoButton->setText(QCoreApplication::translate("MainWindow", "Enter Demo Speak", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "ROSA Monitor", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Version 1.0.1", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Version 1.0.2", nullptr));
     } // retranslateUi
 
 };
