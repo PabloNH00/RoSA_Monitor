@@ -120,7 +120,7 @@ void LauncherManager::StopLauncher(LauncherType type){
              break;
          case CAMERA:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && "
-                          "ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true";
+                          "ros2 launch realsense2_camera rs_launch.py config_file:=src/rosa_robot/rosa_camera/config/camera_config.yaml";
              break;
          case SLAM:
              auxCommand = "cd && cd " + workspace_dir->path() + " && source install/setup.bash && cd maps && "

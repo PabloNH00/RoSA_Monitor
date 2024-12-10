@@ -178,3 +178,8 @@ First completed version
 - Visuals of the buttons 
 - Buttons's background set to green when active
 - Select workspace and select map buttons coloured red if any selected 
+
+## [Versión 1.0.3] 
+  
+### Modified
+- Camera launcher to use the custom config file on rosa_robot repository
