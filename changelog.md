@@ -183,3 +183,9 @@ First completed version
   
 ### Modified
 - Camera launcher to use the custom config file on rosa_robot repository
+
+## [Versión 1.0.4] 
+  
+### Added
+- Limitation to open SLAM when already navigating (it already was in code for the reverse case)
+

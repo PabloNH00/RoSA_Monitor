@@ -193,6 +193,16 @@ void RosaWindow::on_cameraButton_clicked()
 
 void RosaWindow::on_SlamButton_clicked()
 {
+    //Check if navigation is active
+    if(manager.GetLauncher(LauncherManager::NAVIGATION)->GetActive())
+    {
+        QMessageBox::information(this, tr("ROSA Info"), tr("Can not open SLAM while navigating"));
+        ui->SlamButton->setChecked(false);
+
+        ui->statusbar->showMessage("Close navigation before launch SLAM", 5000);
+
+        return;
+    }
     if(!manager.GetLauncher(LauncherManager::SLAM)->GetActive())
     {
         QuestionRvizClose(ui->RvizzButton);
@@ -712,12 +722,12 @@ bool RosaWindow::ButtonPressed(QPushButton* button, LauncherManager::LauncherTyp
 void RosaWindow::QuestionRvizClose(QPushButton *buttonClicked)
 {
     if(manager.GetLauncher(LauncherManager::RVIZZ2)->GetActive()){
-        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("This button opens a custom Rvizz2\nDo you want to close the openned one?"),
+        int disclaimer = QMessageBox::question(this, tr("ROSA Question"), tr("This button opens a custom Rviz2\nDo you want to close the openned one?"),
                                               QMessageBox::Yes | QMessageBox::No);
         if(disclaimer == QMessageBox::Yes){
             manager.StopLauncher(LauncherManager::RVIZZ2);
             buttonClicked->setChecked(false);
-            ui->RvizzButton->setText("Run Rvizz2");
+            ui->RvizzButton->setText("Run Rviz2");
 
             ui->statusbar->showMessage("Closing Rviz", 5000);
 
