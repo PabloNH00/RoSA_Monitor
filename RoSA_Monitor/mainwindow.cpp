@@ -22,13 +22,22 @@ MainWindow::MainWindow(QWidget *parent)
     rosaWindow = new RosaWindow(this);
     demoWindow = new DemoWindow(this);
 
-    //Verify if /maps exists
     QDir* homeDir = new QDir(QDir::homePath());
     bool rosa_ws = homeDir->exists("rosa_ws");
 
     //If not, create /maps in workspace
     if (rosa_ws)
     {
+        //Verify if /maps exists
+        QString mapsDirPath = workspace->filePath("maps");
+        bool mapsExist = workspace->exists("maps");
+
+        //If not, create /maps in workspace
+        if (!mapsExist)
+        {
+            workspace->mkpath(mapsDirPath);
+        }
+
         homeDir->cd("rosa_ws");
         workspace = homeDir;
         ui->workspace_selected->setText(homeDir->dirName());
