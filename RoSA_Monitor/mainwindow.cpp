@@ -28,6 +28,9 @@ MainWindow::MainWindow(QWidget *parent)
     //If not, create /maps in workspace
     if (rosa_ws)
     {
+        homeDir->cd("rosa_ws");
+        workspace = homeDir;
+
         //Verify if /maps exists
         QString mapsDirPath = workspace->filePath("maps");
         bool mapsExist = workspace->exists("maps");
@@ -38,8 +41,6 @@ MainWindow::MainWindow(QWidget *parent)
             workspace->mkpath(mapsDirPath);
         }
 
-        homeDir->cd("rosa_ws");
-        workspace = homeDir;
         ui->workspace_selected->setText(homeDir->dirName());
         ui->select_workspace_button->setStyleSheet("QPushButton {"
                                                        "font-family: 'Times New Roman';"
