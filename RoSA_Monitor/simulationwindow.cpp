@@ -274,6 +274,17 @@ void SimulationWindow::on_navigationButton_clicked()
                     manager.SetMap(map_name);
                     QFileInfo mapInfo(*manager.GetMap());
                     ui->mapLabel->setText(mapInfo.fileName());
+
+                    ui->selectMapButton->setStyleSheet("QPushButton {"
+                                                       "font-family: 'Times New Roman';"
+                                                       "font-size: 18px; "
+                                                       "font-weight: bold;"
+                                                       "border: 2px solid #ccc;"
+                                                       "border-radius: 5px;"
+                                                      "padding: 10px 20px;"
+                                                       "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 white, stop:1 #f0f0f0);"
+                                                       "color: black; "
+                                                   "}");
                 }
             }
             //Create new process
